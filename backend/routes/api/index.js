@@ -8,9 +8,9 @@ router.use('/users', usersRouter);
 
 
 // DELETE THIS AT CLEANUP.
-// router.post('/test', (req, res) => {
-//     res.json({ requestBody: req.body });
-// });
+router.post('/test', (req, res) => {
+    res.json({ requestBody: req.body });
+});
 
 
 // // GET /api/set-token-cookie
