@@ -1,8 +1,16 @@
 const router = require('express').Router();
+const sessionRouter = require('./session.js');
+const usersRouter = require('./users.js');
 
-router.post('/test', (req, res) => {
-    res.json({ requestBody: req.body });
-});
+
+router.use('/session', sessionRouter);
+router.use('/users', usersRouter);
+
+
+// DELETE THIS AT CLEANUP.
+// router.post('/test', (req, res) => {
+//     res.json({ requestBody: req.body });
+// });
 
 
 // // GET /api/set-token-cookie
