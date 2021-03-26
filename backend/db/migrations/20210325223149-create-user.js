@@ -35,6 +35,7 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
+    //REMEMBER to TRUNCATE.
     return queryInterface.dropTable('Users');
   }
 };
