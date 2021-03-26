@@ -7,12 +7,7 @@ router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 
 
-// DELETE THIS AT CLEANUP.
-router.post('/test', (req, res) => {
-    res.json({ requestBody: req.body });
-});
-
-
+// DELETE ON CLEAN-UP.
 // // GET /api/set-token-cookie
 // const asyncHandler = require('express-async-handler');
 // const { setTokenCookie } = require('../../utils/auth.js');
