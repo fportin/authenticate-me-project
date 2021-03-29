@@ -1,0 +1,23 @@
+{
+  "name": "authenticate-me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sequelize": "sequelize",
+    "sequelize-cli": "sequelize-cli",
+    "start": "per-env",
+    "start:development": "nodemon -r dotenv/config ./bin/www",
+    "start:production": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fportin/authenticate-me-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fportin/authenticate-me-project/issues"
+  },
+  "homepage": "https://github.com/fportin/authenticate-me-project#readme"
+}
