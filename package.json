@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/fportin/authenticate-me-project/issues"
   },
-  "homepage": "https://github.com/fportin/authenticate-me-project#readme"
+  "homepage": "https://github.com/fportin/authenticate-me-project#readme",
+  "dependencies": {
+    "sequelize": "^6.6.2"
+  }
 }
