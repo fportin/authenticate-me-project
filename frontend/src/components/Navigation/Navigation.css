@@ -1,0 +1,14 @@
+.navbar__container {
+    background-color: lightcoral;
+    height: 100px;
+    /* position: absolute; */
+    width: 100%;
+    z-index: 99;
+    top: 0;
+}
+
+.navbar__container > ul {
+    border: 1px solid black;
+    margin-top: 0;
+    color: chocolate;
+}
