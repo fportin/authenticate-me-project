@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import './GreetingPage.css'
 import * as sessionActions from '../../store/session';
+import ReviewForm from '../ReviewForm';
 
 
 const GreetingPage = (props) => {

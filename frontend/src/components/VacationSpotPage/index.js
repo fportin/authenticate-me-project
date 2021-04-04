@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory, Redirect } from "react-router-dom";
 
 import * as spotActions from "../../store/vacation-spots";
+import ReviewForm from "../ReviewForm";
 import './VacationSpotPage.css';
 
 function VacationSpotPage() {
@@ -36,6 +37,7 @@ function VacationSpotPage() {
                     <h4>Location: {currentSpot.location}</h4>
                     <p>Activities: {currentSpot.activities}</p>
                     {sessionUser?.id === currentSpot.userId ? <button onClick={editOnClick}>Edit</button> : <h2>different user so No</h2>}
+                    <ReviewForm />
                 </>
                 
             );
