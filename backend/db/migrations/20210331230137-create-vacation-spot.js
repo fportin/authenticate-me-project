@@ -11,7 +11,6 @@ module.exports = {
       spotName: {
         allowNull: false,
         type: Sequelize.STRING,
-        unique: true,
       },
       activities: {
         type: Sequelize.TEXT

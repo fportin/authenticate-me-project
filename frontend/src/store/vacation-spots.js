@@ -72,6 +72,36 @@ export const getSpot = (spotId) => async (dispatch) => {
     // return res;
 };
 
+export const updateSpot = (spot) => async (dispatch) => {
+    const { spotId, spotName, activities, location, pictureURL, sessionUser } = spot;
+    const res = await csrfFetch(`/api/spots/${spotId}/edit`, {
+        method: "PUT",
+        body: JSON.stringify({
+            spotName,
+            activities,
+            location,
+            pictureURL,
+            sessionUser
+        }),
+    });
+    const data = await res.json();
+    dispatch(setSpot(data.spot));
+    return res;
+};
+
+export const deleteSpot = (spot) => async (dispatch) => {
+    const { spotId, sessionUser } = spot;
+    const res = await csrfFetch(`/api/spots/${spotId}/delete`, {
+        method: "DELETE",
+        body: JSON.stringify({
+            sessionUser
+        }),
+    });
+    const data = await res.json();
+    dispatch(setSpot(data.spot));
+    return res;
+};
+
 // export const logout = () => async (dispatch) => {
 //     const response = await csrfFetch('/api/session', {
 //         method: 'DELETE',

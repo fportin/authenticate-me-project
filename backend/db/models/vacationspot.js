@@ -4,7 +4,6 @@ module.exports = (sequelize, DataTypes) => {
     spotName: { 
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
     },
     activities: { 
       type: DataTypes.TEXT
@@ -33,6 +32,18 @@ module.exports = (sequelize, DataTypes) => {
       location, 
       pictureURL,
       userId 
+    });
+
+    return spot;
+    // return await User.scope('currentUser').findByPk(user.id);
+  };
+  VacationSpot.updateSpot = async function ({ targetSpot, spotName, activities, location, pictureURL}) {
+
+    const spot = await targetSpot.update({
+      spotName,
+      activities,
+      location,
+      pictureURL,
     });
 
     return spot;

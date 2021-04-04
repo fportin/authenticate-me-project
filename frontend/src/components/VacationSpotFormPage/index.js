@@ -15,7 +15,6 @@ function VacationSpotFormPage() {
     const [errors, setErrors] = useState([]);
 
     if (sessionUser) {
-        
         const handleSubmit = (e) => {
             e.preventDefault();
             if (sessionUser) {
@@ -26,7 +25,7 @@ function VacationSpotFormPage() {
                         if (data && data.errors) setErrors(data.errors);
                     });
             }
-            return setErrors(['Errors for Vacation Spot Form']);
+            return setErrors(['Errors in creating a new Vacation Spot']);
         };
     
         return (
@@ -36,7 +35,7 @@ function VacationSpotFormPage() {
                 </ul>
                 <label>
                     Name:
-            <input
+                    <input
                         type="text"
                         value={spotName}
                         onChange={(e) => setSpotName(e.target.value)}
@@ -45,15 +44,14 @@ function VacationSpotFormPage() {
                 </label>
                 <label>
                     Activities:
-            <textarea
+                    <textarea
                         value={activities}
                         onChange={(e) => setActivities(e.target.value)}
-                        required
                     />
                 </label>
                 <label>
                     Location:
-            <input
+                    <input
                         type="text"
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
@@ -62,11 +60,10 @@ function VacationSpotFormPage() {
                 </label>
                 <label>
                     Picture URL:
-            <input
+                    <input
                         type="url"
                         value={pictureURL}
                         onChange={(e) => setPictureURL(e.target.value)}
-                        required
                     />
                 </label>
                 <button type="submit">Post a Vacation Spot</button>

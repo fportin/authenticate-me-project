@@ -22,7 +22,8 @@ function VacationSpotPage() {
     
    
     if (currentSpot) {
-        console.log('I fired 1', currentSpot.pictureURL)
+        console.log('CurrSpot', currentSpot.id)
+        console.log('SPOTID', spotId)
         if (currentSpot.id !== parseInt(spotId, 10)) {
             console.log('I fired 2')
             return (<Redirect to='/' />)
