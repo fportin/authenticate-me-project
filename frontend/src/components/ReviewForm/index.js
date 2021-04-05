@@ -7,29 +7,15 @@ import './ReviewForm.css';
 
 function ReviewForm() {
     const dispatch = useDispatch();
-    const history = useHistory();
     const currentSpot = useSelector((state) => state.places.spot);
     const sessionUser = useSelector((state) => state.session.user);
     const [reviewBody, setReviewBody] = useState("");
+    const [reviewSubmitted, setReviewSubmitted] = useState(false);
     const [errors, setErrors] = useState([]);
-
-    console.log('Review', currentSpot)
-    console.log('User', sessionUser)
-
-    // useEffect(() => {
-    //     localStorage.setItem('currentSpot', JSON.stringify(currentSpot))
-    // });
-
-    // useEffect(() => {
-    //     const data = localStorage.getItem('currentSpot');
-
-    //     if (data) {
-    //         setSpotName(currentSpot?.spotName)
-    //         setActivities(currentSpot?.activities);
-    //         setLocation(currentSpot?.location);
-    //         setPictureURL(currentSpot?.pictureURL);
-    //     }
-    // }, [currentSpot])
+  
+    useEffect(() => {
+        dispatch(reviewActions.getReviews(currentSpot.id))
+    }, [currentSpot.id, dispatch, reviewSubmitted]);
 
 
     if (currentSpot) {
@@ -43,7 +29,10 @@ function ReviewForm() {
                     setErrors([]);
                     console.log('handleSubmit value', reviewBody)
                     return dispatch(reviewActions.createReview({ reviewBody, sessionUser, currentSpot }))
-                        .then(() => setReviewBody(''))
+                        .then(() => { 
+                            setReviewBody('')
+                            setReviewSubmitted(true)
+                        })
                         .catch(async (res) => {
                             const data = await res.json();
                             if (data && data.errors) setErrors(data.errors);

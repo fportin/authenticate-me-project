@@ -1,18 +1,10 @@
 import { csrfFetch } from './csrf';
 
 const SET_SPOT = 'SET_SPOT';
-const SHOW_SPOT = 'SHOW_SPOT';
 
 const setSpot = (spot) => {
     return {
         type: SET_SPOT,
-        spot
-    }
-}
-
-const showSpot = (spot) => {
-    return {
-        type: SHOW_SPOT,
         spot
     }
 }
@@ -80,11 +72,6 @@ const initialState = { spot: null };
 const spotReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_SPOT:
-            return {
-                ...state,
-                spot: action.spot
-            };
-        case SHOW_SPOT:
             return {
                 ...state,
                 spot: action.spot

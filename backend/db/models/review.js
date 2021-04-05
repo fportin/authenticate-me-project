@@ -31,6 +31,15 @@ module.exports = (sequelize, DataTypes) => {
     return review;
     // return await User.scope('currentUser').findByPk(user.id);
   };
+  Review.updateReview = async function ({ targetReview, reviewBody }) {
+    const body = reviewBody
+    console.log('updateREv', body)
+    const spot = await targetReview.update({
+      body,
+    });
+    return spot;
+    // return await User.scope('currentUser').findByPk(user.id);
+  };
 
   return Review;
 };

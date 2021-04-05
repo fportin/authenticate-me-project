@@ -45,35 +45,37 @@ export const getReviews = (spotId) => async (dispatch) => {
     // return res;
 };
 
-// export const updateSpot = (spot) => async (dispatch) => {
-//     const { spotId, spotName, activities, location, pictureURL, sessionUser } = spot;
-//     const res = await csrfFetch(`/api/spots/${spotId}/edit`, {
-//         method: "PUT",
-//         body: JSON.stringify({
-//             spotName,
-//             activities,
-//             location,
-//             pictureURL,
-//             sessionUser
-//         }),
-//     });
-//     const data = await res.json();
-//     dispatch(setReview(data.spot));
-//     return res;
-// };
+export const updateReview = (spot) => async (dispatch) => {
+    const { reviewBody, sessionUser, currentSpot, target } = spot;
+    const userId = sessionUser.id;
+    const spotId = currentSpot.id;
+    const res = await csrfFetch(`/api/reviews/${spotId}/edit`, {
+        method: "PUT",
+        body: JSON.stringify({
+            reviewBody,
+            userId,
+            target
+        }),
+    });
+    const data = await res.json();
+    dispatch(setReview(data.review));
+    return res;
+};
 
-// export const deleteSpot = (spot) => async (dispatch) => {
-//     const { spotId, sessionUser } = spot;
-//     const res = await csrfFetch(`/api/spots/${spotId}/delete`, {
-//         method: "DELETE",
-//         body: JSON.stringify({
-//             sessionUser
-//         }),
-//     });
-//     const data = await res.json();
-//     dispatch(setReview(data.spot));
-//     return res;
-// };
+export const deleteReview = (spot) => async (dispatch) => {
+    const { currentSpot, sessionUser, target } = spot;
+    const spotId = currentSpot.id
+    const res = await csrfFetch(`/api/reviews/${spotId}/delete`, {
+        method: "DELETE",
+        body: JSON.stringify({
+            sessionUser,
+            target
+        }),
+    });
+    const data = await res.json();
+    dispatch(setReview(data.review));
+    return res;
+};
 
 
 const initialState = { review: null };

@@ -27,7 +27,6 @@ router.post(
     validateReview,
     asyncHandler(async (req, res) => {
         const { reviewBody, userId, spotId } = req.body;
-        console.log('backend API value', req.body)
         const review = await Review.createReview({ reviewBody, userId, spotId });
         // await setTokenCookie(res, user);
         return res.json({
@@ -45,6 +44,7 @@ router.get('/:spotId(\\d+)', asyncHandler(async (req, res) => {
         where: {
             spotId: spotId,
         },
+        order: [['createdAt', 'DESC']],
         include: User
     });
     if (reviews) {
@@ -56,48 +56,44 @@ router.get('/:spotId(\\d+)', asyncHandler(async (req, res) => {
 
 }))
 
-// router.put(
-//     '/:spotId(\\d+)/edit',
-//     requireAuth,
-//     validateVacationSpot,
-//     asyncHandler(async (req, res) => {
-//         //grab id from the url
-//         const spotId = parseInt(req.params.spotId, 10);
-//         //grab the story from the database
-//         const targetSpot = await VacationSpot.findByPk(spotId);
-//         const { spotName, activities, location, pictureURL, sessionUser } = req.body;
+router.put(
+    '/:spotId(\\d+)/edit',
+    requireAuth,
+    validateReview,
+    asyncHandler(async (req, res) => {
+        const { reviewBody, userId, target } = req.body;
+        //grab the review from the database
+        const targetReview = await Review.findByPk(target);
 
-//         if (targetSpot && targetSpot.userId === sessionUser.id) {
-//             const spot = await VacationSpot.updateSpot({ targetSpot, spotName, activities, location, pictureURL });
-//             // await setTokenCookie(res, user);
-//             return res.json({
-//                 spot,
-//             });
+        if (targetReview && targetReview.userId === userId) {
+            const review = await Review.updateReview({ targetReview, reviewBody });
+            // await setTokenCookie(res, user);
+            return res.json({
+                review,
+            });
 
-//         } else {
-//             return res.json({ message: 'Page not Found! Redirecting back to Home.' })
-//         }
-//     }),
-// );
+        } else {
+            return res.json({ message: 'Resource not Found! Redirecting back to Home.' })
+        }
+    }),
+);
 
-// router.delete(
-//     '/:spotId(\\d+)/delete',
-//     requireAuth,
-//     asyncHandler(async (req, res) => {
-//         //grab id from the url
-//         const spotId = parseInt(req.params.spotId, 10);
-//         //grab the story from the database
-//         const targetSpot = await VacationSpot.findByPk(spotId);
-//         const { sessionUser } = req.body;
+router.delete(
+    '/:spotId(\\d+)/delete',
+    requireAuth,
+    asyncHandler(async (req, res) => {
+        const { sessionUser, target } = req.body;
+        //grab the story from the database
+        const targetReview = await Review.findByPk(target);
 
-//         if (targetSpot && targetSpot.userId === sessionUser.id) {
-//             await targetSpot.destroy();
-//             return res.json({ message: 'The Page has been deleted.' })
+        if (targetReview && targetReview.userId === sessionUser.id) {
+            await targetReview.destroy();
+            return res.json({ message: 'The Page has been deleted.' })
 
-//         } else {
-//             return res.json({ message: 'Page not Found! Redirecting back to Home.' })
-//         }
-//     }),
-// );
+        } else {
+            return res.json({ message: 'Page not Found! Redirecting back to Home.' })
+        }
+    }),
+);
 
 module.exports = router;
