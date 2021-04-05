@@ -1,0 +1,60 @@
+.signup-page__container {
+    /* background-image: url("https://wallpaperaccess.com/full/3111159.jpg"); */
+    height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    font-size: 30px;
+    box-sizing: border-box;
+    /* animation: switchEffect ease-in 10s; */
+    animation-iteration-count: infinite;
+    animation-direction: forwards;
+}
+
+.signup-page__form {
+    /* margin-bottom: 50%; */
+    display: flex;
+    /* border: 1px solid red; */
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.signup-page__title {
+    color: black;
+    text-shadow: none;
+    font-size: 150px;
+}
+
+.signup-page__find {
+    animation: darkenEffect ease-in 3s;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+}
+
+.signup-page__your {
+    animation: darkenEffect ease-in 5s;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+}
+
+.signup-page__escape {
+    animation: darkenEffect ease-in 6s;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+}
+
+@keyframes darkenEffect {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        
+    }
+}

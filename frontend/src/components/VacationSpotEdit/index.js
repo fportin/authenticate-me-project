@@ -75,9 +75,9 @@ function VacationSpotEdit() {
 
 
                 return (
-                    <>
-                        <h1>Edit Page {currentSpot.id}</h1>
-                        <form onSubmit={handleSubmit}>
+                    <div className='edit-spot__container'>
+                        <h1>Edit {currentSpot.spotName}'s Page</h1>
+                        <form className='edit-spot__form' onSubmit={handleSubmit}>
                             <ul>
                                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                             </ul>
@@ -117,7 +117,7 @@ function VacationSpotEdit() {
                             <button type="submit">Post a Vacation Spot</button>
                         </form>
                         <button type="submit" onClick={handleDelete}>Delete</button>
-                    </>
+                    </div>
                 );
             }
           

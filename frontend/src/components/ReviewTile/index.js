@@ -64,7 +64,7 @@ function ReviewTile() {
             
         return (
             <>
-                <h4>Review of {currentSpot.spotName}</h4>
+                <h4>{currentSpot.spotName}'s Reviews</h4>
                 {allReviews?.map((review, idx) => {
                     if (!edit) {
                         return (
@@ -105,7 +105,7 @@ function ReviewTile() {
 
     }
 
-    return (<h1>Comments</h1>);
+    return (<h1>Reviews</h1>);
 }
 
 

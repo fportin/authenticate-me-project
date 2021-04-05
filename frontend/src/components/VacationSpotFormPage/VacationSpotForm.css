@@ -1,0 +1,67 @@
+.spot-page__container {
+    /* background-color: aqua; */
+    background-image: url("https://wallpaperaccess.com/full/3111159.jpg");
+    height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    font-size: 30px;
+    box-sizing: border-box;
+    animation: switchEffect ease-in 10s;
+    animation-iteration-count: infinite;
+    animation-direction: forwards;
+}
+
+.spot-page__form {
+    /* margin-bottom: 50%; */
+    display: flex;
+    /* border: 1px solid red; */
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@keyframes switchEffect {
+    0% {
+        opacity: 1;
+    } 10% {
+        opacity: 1;
+        background-image: url("https://wallpaperaccess.com/full/295875.jpg");
+        
+    } 20% {
+        opacity: 1;
+    } 30% {
+        
+        opacity: 1;
+        background-image: url("https://free4kwallpapers.com/uploads/originals/2015/10/17/the-most-beautiful-places-in-the-world-pictures.jpg");
+        
+    } 40% {
+        opacity: 1;
+        
+    } 50% {
+        
+        opacity: 1;
+        background-image: url("https://wallpaperaccess.com/full/1715266.jpg");
+    } 60% {
+        opacity: 1;
+        
+    } 70% {
+        opacity: 1;
+        background-image: url("https://i.pinimg.com/originals/b3/f8/ad/b3f8ad2e693df2938ee719858e28d8b3.jpg");
+    } 80% {
+        opacity: 1;
+        
+    } 90% {
+        opacity: 1;
+        background-image: url("https://wallpaperaccess.com/full/354975.jpg");
+    }
+    100% {
+        opacity: 1;
+        
+    }
+}

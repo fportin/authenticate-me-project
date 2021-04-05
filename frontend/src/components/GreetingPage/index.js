@@ -22,14 +22,14 @@ const GreetingPage = (props) => {
         if (sessionUser) {
             const timeout = setTimeout(() => {
                 history.push('/');
-            }, 5000)
+            }, 3000)
             return ()=> clearTimeout(timeout);
         }
     }, [sessionUser, history])
 
     if (sessionUser) return (
         <>
-        <h1 className='greeting-page'>{props.greet} {sessionUser.username} --Add other effects!</h1>
+        <h1 className='greeting-page'>{props.greet} {sessionUser.username}</h1>
         </>
     )
 

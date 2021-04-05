@@ -1,14 +1,55 @@
 .navbar__container {
-    background-color: lightcoral;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     height: 100px;
     /* position: absolute; */
     width: 100%;
     z-index: 99;
     top: 0;
+    background-color: black;
+    /* border-bottom: 1px dotted black; */
 }
 
 .navbar__container > ul {
-    border: 1px solid black;
-    margin-top: 0;
-    color: chocolate;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    width: 30%;
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Jacques Francois', serif;
 }
+
+.navbar-home {
+    color: white;
+    text-decoration: none;
+    padding-right: 10%;
+}
+
+.navbar-post {
+    color: white;
+    text-decoration: none;
+}
+
+.profile-dropdown {
+    box-sizing: border-box;
+    display: flex;
+    gap: 10%;
+    width: 500px;
+    color: white
+}
+
+.logo{
+    position: relative;
+    font-size: 50px;
+    font-family: 'Jacques Francois', serif;
+    font-weight: 900;
+    color: white;
+    text-shadow: 3px 3px 0 #silver, -1px -1px 0 #silver, 1px -1px 0 #silver, -1px 1px 0 #silver, 1px 1px 0 #silver;
+    align-self: center;
+    padding-left: 3%;
+}
+

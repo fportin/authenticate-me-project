@@ -1,3 +1,12 @@
 .greeting-page {
-    color: white
+    box-sizing: border-box;
+    display: flex;
+    margin-top: 0;
+    width: 100vw;
+    height: 95vh;
+    color: white;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
 }

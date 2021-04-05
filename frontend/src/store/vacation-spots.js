@@ -1,11 +1,19 @@
 import { csrfFetch } from './csrf';
 
 const SET_SPOT = 'SET_SPOT';
+const SHOW_SPOTS = 'SHOW_SPOTS';
 
 const setSpot = (spot) => {
     return {
         type: SET_SPOT,
         spot
+    }
+}
+
+const showSpots = (allSpots) => {
+    return {
+        type: SHOW_SPOTS,
+        allSpots
     }
 }
 
@@ -32,6 +40,15 @@ export const getSpot = (spotId) => async (dispatch) => {
     if(res.ok) {
         const data = await res.json();
         dispatch(setSpot(data));
+    }
+    // return res;
+};
+
+export const getSpots = () => async (dispatch) => {
+    const res = await fetch(`/api/spots`);
+    if (res.ok) {
+        const data = await res.json();
+        dispatch(showSpots(data));
     }
     // return res;
 };
@@ -75,6 +92,11 @@ const spotReducer = (state = initialState, action) => {
             return {
                 ...state,
                 spot: action.spot
+            };
+        case SHOW_SPOTS:
+            return {
+                ...state,
+                allSpots: action.allSpots
             };
         default:
             return state;

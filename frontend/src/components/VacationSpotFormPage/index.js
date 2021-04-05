@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 import * as spotActions from "../../store/vacation-spots";
 import './VacationSpotForm.css';
 
 function VacationSpotFormPage() {
     const dispatch = useDispatch();
+    const history = useHistory();
     const sessionUser = useSelector((state) => state.session.user);
     const [spotName, setSpotName] = useState("");
     const [activities, setActivities] = useState("");
@@ -20,6 +21,7 @@ function VacationSpotFormPage() {
             if (sessionUser) {
                 setErrors([]);
                 return dispatch(spotActions.createSpot({ spotName, activities, location, pictureURL, sessionUser }))
+                    .then(() => history.push(`/`))
                     .catch(async (res) => {
                         const data = await res.json();
                         if (data && data.errors) setErrors(data.errors);
@@ -29,7 +31,9 @@ function VacationSpotFormPage() {
         };
     
         return (
-            <form onSubmit={handleSubmit}>
+            <div className='spot-page__container'>
+
+                <form className='spot-page__form' onSubmit={handleSubmit}>
                 <ul>
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
@@ -47,7 +51,7 @@ function VacationSpotFormPage() {
                     <textarea
                         value={activities}
                         onChange={(e) => setActivities(e.target.value)}
-                    />
+                        />
                 </label>
                 <label>
                     Location:
@@ -56,7 +60,7 @@ function VacationSpotFormPage() {
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
                         required
-                    />
+                        />
                 </label>
                 <label>
                     Picture URL:
@@ -68,6 +72,7 @@ function VacationSpotFormPage() {
                 </label>
                 <button type="submit">Post a Vacation Spot</button>
             </form>
+        </div>
         );
     } else {
         return <Redirect to="/login" />;

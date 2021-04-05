@@ -32,15 +32,15 @@ function VacationSpotPage() {
         } else {
             console.log('I fired 3')
             return (
-                <>
+                <div className='spot-page'>
                     <h1>{currentSpot.spotName}</h1>
                     <img src={currentSpot.pictureURL} alt='place'/>
                     <h4>Location: {currentSpot.location}</h4>
                     <p>Activities: {currentSpot.activities}</p>
-                    {sessionUser?.id === currentSpot.userId ? <button onClick={editOnClick}>Edit</button> : <h2>different user so No</h2>}
+                    {sessionUser?.id === currentSpot.userId ? <button onClick={editOnClick}>Edit</button> : null}
                     <ReviewForm />
                     <ReviewTile />
-                </>
+                </div>
                 
             );
         }

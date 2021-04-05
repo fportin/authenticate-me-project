@@ -1,0 +1,10 @@
+.front-page__container {
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    padding: 3%;
+    gap: 3%;
+}

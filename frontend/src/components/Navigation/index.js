@@ -11,7 +11,10 @@ function Navigation({ isLoaded }) {
     let sessionLinks;
     if (sessionUser) {
         sessionLinks = (
+            <>
+            <NavLink className='navbar-post' exact to="/create-spot">Post A Vacation Spot</NavLink>
             <ProfileButton user={sessionUser} />
+            </>
         );
     } else {
         sessionLinks = (
@@ -26,10 +29,11 @@ function Navigation({ isLoaded }) {
         <div className='navbar__container'>
             <ul>
                 <li>
-                    <NavLink exact to="/">Home</NavLink>
+                    <NavLink className='navbar-home' exact to="/">Home</NavLink>
                     {isLoaded && sessionLinks}
                 </li>
             </ul>
+            <h1 className='logo'>FunFinder🔎</h1>
         </div>
     );
 }

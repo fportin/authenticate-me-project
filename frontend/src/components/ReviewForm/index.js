@@ -58,7 +58,7 @@ function ReviewForm() {
 
             return (
                 <>
-                    <h1>Review {currentSpot.spotName}:</h1>
+                    <h1>Post a Review of {currentSpot.spotName}:</h1>
                     <form onSubmit={handleSubmit}>
                         <ul>
                             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
@@ -70,7 +70,7 @@ function ReviewForm() {
                                 onChange={(e) => setReviewBody(e.target.value)}
                             />
                         </label>
-                        <button type="submit">Post a Review</button>
+                        <button type="submit">Post</button>
                     </form>
                     {/* <button type="submit" onClick={handleDelete}>Delete</button> */}
                 </>

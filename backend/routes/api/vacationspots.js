@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 const { check } = require('express-validator');
 
 const { requireAuth } = require('../../utils/auth');
-const { VacationSpot } = require('../../db/models');
+const { VacationSpot, Review } = require('../../db/models');
 const { handleValidationErrors } = require('../../utils/validation');
 
 
@@ -57,6 +57,21 @@ router.get('/:spotId(\\d+)', asyncHandler(async (req, res) => {
     if (spot) {
 
         return res.json(spot);
+    } else {
+        return res.json({ message: 'Page not Found! Redirecting back to Home.' })
+    }
+
+}))
+
+router.get('/', asyncHandler(async (req, res) => {
+    
+    const spots = await VacationSpot.findAll({
+        order: [['createdAt', 'DESC']],
+        include: Review
+    });
+    if (spots) {
+
+        return res.json(spots);
     } else {
         return res.json({ message: 'Page not Found! Redirecting back to Home.' })
     }

@@ -1,12 +1,12 @@
 /* TODO Add site wide styles */
 html, body {
-    background-color: black;
+    background-color: #fffafa;
     margin: 0;
     padding: 0;
     /* height: 100vh;
     width: 100vw; */
     /* overflow: hidden; */
-    color: white;
+    /* color: white; */
 }
 
 * {
