@@ -41,7 +41,9 @@ function ReviewForm() {
                 e.preventDefault();
                 if (sessionUser) {
                     setErrors([]);
+                    console.log('handleSubmit value', reviewBody)
                     return dispatch(reviewActions.createReview({ reviewBody, sessionUser, currentSpot }))
+                        .then(() => setReviewBody(''))
                         .catch(async (res) => {
                             const data = await res.json();
                             if (data && data.errors) setErrors(data.errors);

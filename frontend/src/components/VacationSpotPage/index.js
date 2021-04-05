@@ -4,6 +4,7 @@ import { useParams, useHistory, Redirect } from "react-router-dom";
 
 import * as spotActions from "../../store/vacation-spots";
 import ReviewForm from "../ReviewForm";
+import ReviewTile from "../ReviewTile";
 import './VacationSpotPage.css';
 
 function VacationSpotPage() {
@@ -38,6 +39,7 @@ function VacationSpotPage() {
                     <p>Activities: {currentSpot.activities}</p>
                     {sessionUser?.id === currentSpot.userId ? <button onClick={editOnClick}>Edit</button> : <h2>different user so No</h2>}
                     <ReviewForm />
+                    <ReviewTile />
                 </>
                 
             );

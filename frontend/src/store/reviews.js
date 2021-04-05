@@ -3,17 +3,17 @@ import { csrfFetch } from './csrf';
 const SET_REVIEW = 'SET_REVIEW';
 const SHOW_REVIEW = 'SHOW_REVIEW';
 
-const setReview = (spot) => {
+const setReview = (review) => {
     return {
         type: SET_REVIEW,
-        spot
+        review
     }
 }
 
-const showReview = (spot) => {
+const showReviews = (allReviews) => {
     return {
         type: SHOW_REVIEW,
-        spot
+        allReviews
     }
 }
 
@@ -32,18 +32,18 @@ export const createReview = (spot) => async (dispatch) => {
         }),
     });
     const data = await res.json();
-    dispatch(setReview(data.spot));
+    dispatch(setReview(data.review));
     return res;
 };
 
-// export const getSpot = (spotId) => async (dispatch) => {
-//     const res = await fetch(`/api/spots/${spotId}`);
-//     if (res.ok) {
-//         const data = await res.json();
-//         dispatch(setReview(data));
-//     }
-//     // return res;
-// };
+export const getReviews = (spotId) => async (dispatch) => {
+    const res = await fetch(`/api/reviews/${spotId}`);
+    if (res.ok) {
+        const data = await res.json();
+        dispatch(showReviews(data));
+    }
+    // return res;
+};
 
 // export const updateSpot = (spot) => async (dispatch) => {
 //     const { spotId, spotName, activities, location, pictureURL, sessionUser } = spot;
@@ -76,19 +76,19 @@ export const createReview = (spot) => async (dispatch) => {
 // };
 
 
-const initialState = { spot: null };
+const initialState = { review: null };
 
 const reviewReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_REVIEW:
             return {
                 ...state,
-                spot: action.spot
+                review: action.review
             };
         case SHOW_REVIEW:
             return {
                 ...state,
-                spot: action.spot
+                allReviews: action.allReviews
             };
         default:
             return state;
