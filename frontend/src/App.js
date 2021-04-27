@@ -9,7 +9,7 @@ import VacationSpotPage from "./components/VacationSpotPage"
 import VacationSpotEdit from "./components/VacationSpotEdit"
 import FrontPage from './components/FrontPage';
 import GreetingPage from './components/GreetingPage';
-import Searchbar from './components/Searchbar'
+
 
 import * as sessionActions from './store/session';
 
@@ -25,7 +25,6 @@ function App() {
   return (
     <div className='page__container'>
       <Navigation isLoaded={isLoaded} />
-      <Searchbar />
       {isLoaded && (
         <Switch>
           <Route exact path='/'>

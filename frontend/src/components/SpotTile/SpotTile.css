@@ -15,8 +15,12 @@
     border-radius: 5px;
     overflow: hidden;
     padding: 1%;
+    transition: background-size 2s ease-in;
+    background-position: center;
 }
 
 .spot-tile__container:hover {
     box-shadow: 0 10px 10px 5px #062743;
+    background-size: 600px 433px;
+    background-position: center;
 }

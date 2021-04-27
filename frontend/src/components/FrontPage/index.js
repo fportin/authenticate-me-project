@@ -4,6 +4,7 @@ import { useHistory, Redirect } from "react-router-dom";
 
 import * as spotActions from "../../store/vacation-spots";
 import SpotTile from "../SpotTile";
+import Searchbar from '../Searchbar'
 import './FrontPage.css';
 
 function FrontPage() {
@@ -24,9 +25,12 @@ function FrontPage() {
         
 
     return (
-        <div className='front-page__container'>
-            <SpotTile />
-        </div>
+        <> 
+            <Searchbar />
+            <div className='front-page__container'>
+                <SpotTile />
+            </div>
+        </>
     );
 }
 

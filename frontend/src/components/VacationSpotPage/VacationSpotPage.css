@@ -2,5 +2,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
+    margin-top: 100px;
+}
+
+.spot-picture {
+    width: 50vw;
+    height: 50vh;
+}
+
+.spot-name {
+    stroke: white;
+    stroke-dasharray: 100px;
+    /* stroke-dashoffset: 1000px; */
+    color: teal;
 }

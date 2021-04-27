@@ -11,6 +11,7 @@
     text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     font-size: 30px;
     box-sizing: border-box;
+    margin-top: 100px;
     animation: switchEffect ease-in 10s;
     animation-iteration-count: infinite;
     animation-direction: forwards;

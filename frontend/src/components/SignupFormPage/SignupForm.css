@@ -10,6 +10,7 @@
     text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     font-size: 30px;
     box-sizing: border-box;
+    margin-top: 100px;
     /* animation: switchEffect ease-in 10s; */
     animation-iteration-count: infinite;
     animation-direction: forwards;
@@ -38,13 +39,13 @@
 }
 
 .signup-page__your {
-    animation: darkenEffect ease-in 5s;
+    animation: darkenEffect ease-in 4s;
     animation-iteration-count: 1;
     animation-direction: forwards;
 }
 
 .signup-page__escape {
-    animation: darkenEffect ease-in 6s;
+    animation: darkenEffect ease-in 4.5s;
     animation-iteration-count: 1;
     animation-direction: forwards;
 }
