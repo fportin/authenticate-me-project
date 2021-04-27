@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import './LoginForm.css'
 import * as sessionActions from '../../store/session';
-import GreetingPage from '../GreetingPage'
 
-const LoginFormPage = () => {
+const LoginForm = () => {
     const dispatch = useDispatch();
-    const sessionUser = useSelector(state => state.session.user);
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
+    const history = useHistory();
 
-    if (sessionUser) return (
-        <GreetingPage greet='Welcome back,' />
-    )
-
+    
+        
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        return dispatch(sessionActions.login({ credential, password}))
-            .catch(async(res) => {
+        setErrors([])
+        return dispatch(sessionActions.login({ credential, password }))
+            .then(() => history.push('/greeting'))
+            .catch(async (res) => {
                 const data = await res.json();
                 if (data && data.errors) setErrors(data.errors)
             });
@@ -36,11 +34,11 @@ const LoginFormPage = () => {
                 </ul>
                 <label>
                     Username or Email:
-                    <input type='text' value={credential} onChange={(e) => setCredential(e.target.value)} required/>
+                    <input type='text' value={credential} onChange={(e) => setCredential(e.target.value)} required />
                 </label>
                 <label>
                     Password:
-                    <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} required/>
+                    <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} required />
                 </label>
                 <button type='submit'>Log In</button>
             </form>
@@ -50,4 +48,4 @@ const LoginFormPage = () => {
 
 
 
-export default LoginFormPage;
+export default LoginForm;

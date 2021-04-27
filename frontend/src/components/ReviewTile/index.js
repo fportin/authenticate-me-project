@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Redirect } from "react-router-dom";
 
 import * as reviewActions from "../../store/reviews";
+import ReviewForm from '../ReviewForm'
 import './ReviewTile.css';
 
 function ReviewTile() {
@@ -65,6 +66,7 @@ function ReviewTile() {
         return (
             <>
                 <h4>{currentSpot.spotName}'s Reviews</h4>
+                { edit ? null : <ReviewForm /> }
                 {allReviews?.map((review, idx) => {
                     if (!edit) {
                         return (

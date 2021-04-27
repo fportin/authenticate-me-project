@@ -41,21 +41,7 @@ function ReviewForm() {
                 return setErrors(['Errors in creating a review for the current Vacation Spot']);
             };
 
-            // const handleDelete = (e) => {
-            //     e.preventDefault();
-            //     if (sessionUser) {
-            //         setErrors([]);
-            //         return dispatch(reviewActions.deleteSpot({ spotId, sessionUser }))
-            //             .then(() => history.push('/'))
-            //             .catch(async (res) => {
-            //                 const data = await res.json();
-            //                 if (data && data.errors) setErrors(data.errors);
-            //             });
-            //     }
-            //     return setErrors(['Errors in deleting the current Vacation Spot']);
-            // };
-
-
+            
             return (
                 <>
                     <h1>Post a Review of {currentSpot.spotName}:</h1>

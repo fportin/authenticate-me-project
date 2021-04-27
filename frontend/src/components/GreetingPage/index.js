@@ -21,15 +21,14 @@ const GreetingPage = (props) => {
     useEffect(() => { 
         if (sessionUser) {
             const timeout = setTimeout(() => {
-                history.push('/');
+                history.goBack();
             }, 3000)
             return ()=> clearTimeout(timeout);
         }
     }, [sessionUser, history])
-
     if (sessionUser) return (
         <>
-        <h1 className='greeting-page'>{props.greet} {sessionUser.username}</h1>
+        <h1 className='greeting-page'>Welcome back, {sessionUser.username}!</h1>
         </>
     )
 

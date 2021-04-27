@@ -2,17 +2,17 @@
     box-sizing: border-box;
     display: flex;
     align-items: flex-end;
-    height: 400px;
-    width: 400px;
-    background-size: 400px 400px;
-    font-family: 'Jacques Francois', serif;
+    height: 333px;
+    width: 500px;
+    background-size: 500px 333px;
+    font-family: 'Yesteryear', cursive;
     font-size: 50px;
     color: white;
     text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    margin-bottom: 3%;
-    border: 1px solid black;
+    margin-bottom: 1%;
+    border: 1px hidden;
     border-width: 2px 4px;
-    border-radius: 40px;
+    border-radius: 5px;
     overflow: hidden;
     padding: 1%;
 }

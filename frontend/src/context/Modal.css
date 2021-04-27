@@ -1,0 +1,33 @@
+#modal {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(80, 78, 78, 0.7);
+}
+
+#modal-content {
+    box-sizing: border-box;
+    display: flex;
+    height: 600px;
+    width: 900px;
+    position: absolute;
+    background-color:white;
+    border: 1px hidden;
+    border-width: 2px 4px;
+    border-radius: 5px;
+    overflow: hidden;
+}

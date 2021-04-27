@@ -38,7 +38,7 @@ function VacationSpotPage() {
                     <h4>Location: {currentSpot.location}</h4>
                     <p>Activities: {currentSpot.activities}</p>
                     {sessionUser?.id === currentSpot.userId ? <button onClick={editOnClick}>Edit</button> : null}
-                    <ReviewForm />
+                    {/* <ReviewForm /> */}
                     <ReviewTile />
                 </div>
                 
