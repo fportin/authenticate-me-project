@@ -1,0 +1,13 @@
+.search-bar__container {
+    box-sizing: border-box;
+    background-image: url('../../search-bar.jpeg');
+    background-size: 100% 100%;
+    height: 400px;
+    width: 100%;
+    font-size: 100px;
+    margin-top: 100px;
+}
+
+.search-bar {
+    color: white;
+}
