@@ -20,6 +20,7 @@ function SpotTile() {
 
     const handleClick = spotId => (e) => {
         e.preventDefault();
+        console.log('Spot Tile - I got clicked!')
         history.push(`/spots/${spotId}`)
     }
 

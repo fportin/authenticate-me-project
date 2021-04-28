@@ -39,7 +39,6 @@ router.get('/:spotId(\\d+)', asyncHandler(async (req, res) => {
     //grab id from the url
     const spotId = parseInt(req.params.spotId, 10);
     //grab the story from the database
-    console.log('I happened')
     const reviews = await Review.findAll({
         where: {
             spotId: spotId,
