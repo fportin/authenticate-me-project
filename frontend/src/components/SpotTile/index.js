@@ -11,7 +11,7 @@ function SpotTile() {
     const allSpots = useSelector((state) => state.places.allSpots);
     const sessionUser = useSelector((state) => state.session.user);
     const allReviews = useSelector((state) => state.reviews.allReviews);
-    const [errors, setErrors] = useState([]);
+    // const [errors, setErrors] = useState([]);
 
 
     useEffect(() => {
@@ -20,7 +20,6 @@ function SpotTile() {
 
     const handleClick = spotId => (e) => {
         e.preventDefault();
-        console.log('Spot Tile - I got clicked!')
         history.push(`/spots/${spotId}`)
     }
 

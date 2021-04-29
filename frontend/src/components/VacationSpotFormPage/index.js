@@ -31,7 +31,7 @@ function VacationSpotFormPage() {
         };
     
         return (
-            <div className='spot-page__container'>
+            <div className='spot-page-form__container'>
 
                 <form className='spot-page__form' onSubmit={handleSubmit}>
                 <ul>

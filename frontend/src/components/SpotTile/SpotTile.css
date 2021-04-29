@@ -1,7 +1,10 @@
 .spot-tile__container {
     box-sizing: border-box;
     display: flex;
+    /* align-items: center;
+    justify-content: center; */
     align-items: flex-end;
+    justify-content: flex-end;
     height: 333px;
     width: 500px;
     background-size: 500px 333px;
@@ -14,13 +17,15 @@
     border-width: 2px 4px;
     border-radius: 5px;
     overflow: hidden;
-    padding: 1%;
+    padding-right: 3%;
+    padding-bottom: 1%;
     transition: background-size 2s ease-in;
     background-position: center;
+    cursor: pointer;
 }
 
 .spot-tile__container:hover {
     box-shadow: 0 10px 10px 5px #062743;
-    background-size: 600px 413px;
+    background-size: 700px 483px;
     background-position: center;
 }

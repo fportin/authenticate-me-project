@@ -27,6 +27,16 @@
     justify-content: space-around;
 }
 
+.login-button {
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    font-family: 'Jacques Francois', serif;
+    border-color: #f9f9f9;
+    border-style: hidden;
+    border-radius: 45%;
+}
+
 @keyframes fadeInEffect {
     0% {
         opacity: 0;

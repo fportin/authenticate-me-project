@@ -1,19 +1,35 @@
-.spot-page{
+.spot-page {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.spot-page__container{
+    box-sizing: border-box;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
-    margin-top: 100px;
+    align-items: center;
+    margin-top: 120px;
+    border: 15px solid maroon;
+    width: 52%;
 }
 
 .spot-picture {
     width: 50vw;
     height: 50vh;
+    border: 1px hidden;
+    border-width: 2px 4px;
+    border-radius: 5px;
 }
 
 .spot-name {
     stroke: white;
     stroke-dasharray: 100px;
     /* stroke-dashoffset: 1000px; */
-    color: teal;
+    font-family: 'Yesteryear', cursive;
+    font-size: 50px;
+    color: sandybrown;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }

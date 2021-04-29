@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import LoginForm from './LoginForm'
 import { Modal } from '../../context/Modal'
+import './LoginForm.css'
 
 
 const LoginFormModal = () => {
@@ -24,7 +25,7 @@ const LoginFormModal = () => {
     )
 
     return (
-        <button onClick={handleOnClick}>Log In</button>
+        <button className='login-button' onClick={handleOnClick}>Log In</button>
     )
 }
 

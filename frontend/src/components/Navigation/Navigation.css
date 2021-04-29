@@ -1,7 +1,7 @@
 .navbar__container {
     box-sizing: border-box;
     display: flex;
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
     justify-content: space-between;
     height: 100px;
     position: fixed;
@@ -16,12 +16,14 @@
 .navbar__container > ul {
     box-sizing: border-box;
     display: flex;
-    align-items: flex-start;
-    width: 30%;
+    /* flex-wrap: wrap; */
+    justify-content: flex-end;
+    width: 70%;
     margin-top: 10px;
     color: white;
     font-size: 20px;
     font-family: 'Jacques Francois', serif;
+    /* border: 1px solid white; */
 }
 
 .navbar-home {
@@ -33,14 +35,23 @@
 .navbar-post {
     color: white;
     text-decoration: none;
+    /* border: 1px solid white; */
 }
 
 .profile-dropdown {
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     gap: 10%;
-    width: 500px;
-    color: white
+    width: auto;
+    color: red;
+    border: 1px solid greenyellow;
+}
+
+.dropdown {
+    /* border: 1px solid red; */
+    /* height: 500px; */
+    width: 300px;
 }
 
 .logo{
@@ -49,8 +60,14 @@
     font-family: 'Yesteryear', cursive;
     font-weight: 900;
     color: white;
-    text-shadow: 3px 3px 0 #silver, -1px -1px 0 #silver, 1px -1px 0 #silver, -1px 1px 0 #silver, 1px 1px 0 #silver;
+    /* text-shadow: 3px 3px 0 darkslategray, -1px -1px 0 darkslategray, 1px -1px 0 darkslategray, -1px 1px 0 darkslategray, 1px 1px 0 darkslategray; */
     align-self: center;
     padding-left: 3%;
+    cursor: pointer;
+    filter: contrast(500%);
 }
 
+.signup-button {
+    text-decoration: none;
+    color: white;
+}

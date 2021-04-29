@@ -22,10 +22,6 @@ function VacationSpotEdit() {
     }, [spotId, dispatch]);
     
     useEffect(() => {
-        localStorage.setItem('currentSpot', JSON.stringify(currentSpot))
-    });
-
-    useEffect(() => {
         const data = localStorage.getItem('currentSpot');
 
         if (data) {
@@ -35,6 +31,11 @@ function VacationSpotEdit() {
             setPictureURL(currentSpot?.pictureURL);
         }
     }, [currentSpot])
+    
+    useEffect(() => {
+        localStorage.setItem('currentSpot', JSON.stringify(currentSpot))
+    });
+
 
 
     if (currentSpot) {

@@ -24,21 +24,19 @@ function VacationSpotPage() {
     
    
     if (currentSpot) {
-        // if (currentSpot.id !== parseInt(spotId, 10)) {
-        //     return (<Redirect to='/' />)
-        // } else {
+        
         return (
             <div className='spot-page'>
-                <img src={currentSpot.pictureURL} alt='place' className='spot-picture'/>
-                <h1 className='spot-name'>{currentSpot.spotName}</h1>
-                <h4>Location: {currentSpot.location}</h4>
-                <p>Activities: {currentSpot.activities}</p>
-                {sessionUser?.id === currentSpot.userId ? <button onClick={editOnClick}>Edit</button> : null}
-                {/* <ReviewForm /> */}
-                <ReviewTile />
+                <div className='spot-page__container'>
+                    <img src={currentSpot.pictureURL} alt='place' className='spot-picture'/>
+                    <h1 className='spot-name'>{currentSpot.spotName}</h1>
+                    <h4>Location: {currentSpot.location}</h4>
+                    <p>Activities: {currentSpot.activities}</p>
+                    {sessionUser?.id === currentSpot.userId ? <button onClick={editOnClick}>Edit</button> : null}
+                    <ReviewTile />
+                </div>
             </div>
         );
-        // }
     }
     return (<></>);
 

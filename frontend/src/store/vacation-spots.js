@@ -44,11 +44,17 @@ export const getSpot = (spotId) => async (dispatch) => {
     // return res;
 };
 
-export const getSpots = () => async (dispatch) => {
+export const getSpots = (searchWord) => async (dispatch) => {
     const res = await fetch(`/api/spots`);
     if (res.ok) {
         const data = await res.json();
-        dispatch(showSpots(data));
+        let filteredData = data;
+        if (searchWord) {
+            if (searchWord.trim().length) {
+                filteredData = data.filter(spot => spot.spotName.toLowerCase().startsWith(searchWord?.toLowerCase()))
+            } 
+        }
+        dispatch(showSpots(filteredData));
     }
     // return res;
 };
