@@ -26,11 +26,11 @@
     /* border: 1px solid white; */
 }
 
-.navbar-home {
+/* .navbar-home {
     color: white;
     text-decoration: none;
     padding-right: 10%;
-}
+} */
 
 .navbar-post {
     color: white;
@@ -60,7 +60,6 @@
     font-family: 'Yesteryear', cursive;
     font-weight: 900;
     color: white;
-    /* text-shadow: 3px 3px 0 darkslategray, -1px -1px 0 darkslategray, 1px -1px 0 darkslategray, -1px 1px 0 darkslategray, 1px 1px 0 darkslategray; */
     align-self: center;
     padding-left: 3%;
     cursor: pointer;

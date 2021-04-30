@@ -28,9 +28,9 @@ function Searchbar() {
         const data = localStorage.getItem('currentSearchWord');
         if (data) {
             setSearchActive(true)
+            setSearchWord(data)
         }
-        setSearchWord(data)
-    }, [allSpots])
+    }, [])
     
     useEffect(() => {
         localStorage.setItem('currentSearchWord', searchWord)
@@ -65,14 +65,18 @@ function Searchbar() {
     let resetButtonActive;
     if (location.pathname === '/') {
         resetButtonActive = (
-            <button type='reset' onClick={handleReset}>Reset</button>
+            <button type='reset' onClick={handleReset} className='reset-button'>ⓧ</button>
         )
     }
 
     if (location.pathname === '/') {
-        let searchBarEle = document.querySelector('.search-bar__container')
+        let searchBarCon = document.querySelector('.search-bar__container')
+        let searchBarBox = document.querySelector('.search-bar')
+        let searchBarButton = document.querySelector('.search-button')
         
-        searchBarEle?.classList.add('front-page')
+        searchBarCon?.classList.add('front-page')
+        searchBarBox?.classList.add('search-bar__front-page')
+        searchBarButton?.classList.add('search-button__front-page')
     }
     
     return (
@@ -85,7 +89,7 @@ function Searchbar() {
                 onChange={(e) => setSearchWord(e.target.value)}
                 onKeyPress={handleEnterKey}
             />
-            <button type='submit' onClick={handleClick}>Search</button>
+            <button type='submit' onClick={handleClick} className='search-button'>🔎</button>
             { resetButtonActive }
         </div>
     )
