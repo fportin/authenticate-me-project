@@ -1,0 +1,8 @@
+.spot-map__container {
+    box-sizing: border-box;
+    width: 400px;
+    height: 180px;
+    display: flex;
+    overflow: hidden;
+    text-align: center;
+}
