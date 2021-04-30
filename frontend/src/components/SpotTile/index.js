@@ -43,7 +43,7 @@ function SpotTile() {
 
 
 
-    return (<h1>Spot</h1>);
+    return (<></>);
 }
 
 

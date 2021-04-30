@@ -1,4 +1,4 @@
-.search-bar__container {
+.front-page {
     box-sizing: border-box;
     background-image: url('../../search-bar.jpeg');
     background-size: 100% 100%;
@@ -6,6 +6,10 @@
     width: 100%;
     font-size: 100px;
     margin-top: 100px;
+}
+
+.other {
+    
 }
 
 .search-bar {
