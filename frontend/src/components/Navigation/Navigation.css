@@ -77,4 +77,6 @@
 .signup-button {
     text-decoration: none;
     color: white;
+    margin-right: 25px;
+    margin-left: 15px;
 }
