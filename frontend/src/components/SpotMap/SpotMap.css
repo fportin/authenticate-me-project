@@ -1,11 +1,11 @@
 .spot-map__container {
     /* box-sizing: border-box; */
-    width: 400px;
+    width: 80%;
     height: 400px;
     /* display: flex; */
     overflow: hidden;
     /* text-align: center; */
-    border: 1px solid red;
-    border-radius: 45px;
+    border: 2px solid silver;
+    border-radius: 15px;
     z-index: 1;
 }

@@ -2,6 +2,7 @@
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    background-color: whitesmoke;
 }
 
 .spot-page__container{
@@ -12,12 +13,14 @@
     justify-content: center;
     align-items: center;
     margin-top: 120px;
-    border: 15px solid maroon;
+    border: 1px solid silver;
+    border-radius: 25px;
     width: 52%;
+    background-color: white;
 }
 
 .spot-picture {
-    width: 50vw;
+    width: 55vw;
     height: 50vh;
     border: 1px hidden;
     border-width: 2px 4px;
@@ -32,4 +35,15 @@
     font-size: 50px;
     color: sandybrown;
     text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.spot-location {
+    font-family: 'Jacques Francois', serif;
+    font-size: 15px;
+
+}
+
+.spot-activities {
+    font-family: 'Jacques Francois', serif;
+    font-size: 20px;
 }

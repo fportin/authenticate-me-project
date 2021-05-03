@@ -44,7 +44,7 @@ function ReviewForm() {
             
             return (
                 <>
-                    <h1>Post a Review of {currentSpot.spotName}:</h1>
+                    <h1 className='review-form-title'>Post a Review:</h1>
                     <form onSubmit={handleSubmit}>
                         <ul>
                             {errors.map((error, idx) => <li key={idx}>{error}</li>)}

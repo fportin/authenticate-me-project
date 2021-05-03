@@ -69,4 +69,34 @@
 
 .search-bar {
     color: black;
+    border: none;
+    width: 180px;
+    height: 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.search-bar:focus {
+    outline: none;
+}
+
+.search-button {
+    border: 1px hidden;
+    background-color: transparent;
+    font-size: 25px;
+    filter: contrast(500%);
+    transition: invert 0.01s ease-in-out;
+    transition: transform 0.5s ease-in-out;    
+}
+
+.search-button:hover {
+    cursor: pointer;
+    transform: rotate(360deg);   
+}
+
+.search-button:active {
+    cursor: pointer;
+    filter: invert(100);   
 }

@@ -66,7 +66,7 @@ function ReviewTile() {
         
         return (
             <>
-                <h4>{currentSpot.spotName}'s Reviews</h4>
+                <h4 className='review-title'>{currentSpot.spotName}'s Reviews</h4>
                 { edit ? null : <ReviewForm /> }
                 {allReviews.map((review, idx) => {
                     if (!edit) {

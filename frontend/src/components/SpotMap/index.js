@@ -24,11 +24,11 @@ const SpotMap = () => {
             return (
                 // <div >
                 //     </div>
-                <MapContainer className='spot-map__container' center={coordinates} zoom={7} scrollWheelZoom={false}>
+                <MapContainer className='spot-map__container' center={coordinates} zoom={11} scrollWheelZoom={false}>
                     <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                     <Marker position={coordinates}>
                         <Popup>
-                            {location} <br /> Easily customizable.
+                            {currentSpot.spotName} <br /> {location}
                         </Popup>
                     </Marker>
                 </MapContainer>

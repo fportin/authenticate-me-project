@@ -35,6 +35,8 @@
 .navbar-post {
     color: white;
     text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
     /* border: 1px solid white; */
 }
 
@@ -44,14 +46,20 @@
     flex-direction: column;
     gap: 10%;
     width: auto;
-    color: red;
-    border: 1px solid greenyellow;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    padding-bottom: 5px;
 }
 
 .dropdown {
     /* border: 1px solid red; */
     /* height: 500px; */
-    width: 300px;
+    width: 250px;
+    margin-right: 1%;
+    margin-left: 1%;
+    
 }
 
 .logo{
