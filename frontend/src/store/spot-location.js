@@ -43,6 +43,14 @@ export const createSpotLocation = (address) => async(dispatch) => {
     })
 }
 
+export const getSpotLocation = (spotId) => async (dispatch) => {
+    const res = await fetch(`/api/spot-locations/${spotId}`);
+    if (res.ok) {
+        const data = await res.json();
+        dispatch(setCoordinates(data));
+    }
+    // return res;
+};
 
 const initialState = { location: null}
 

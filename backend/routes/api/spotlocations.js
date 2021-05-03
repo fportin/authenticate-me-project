@@ -22,5 +22,23 @@ router.post(
     }),
 );
 
+router.get('/:spotId(\\d+)', asyncHandler(async (req, res) => {
+    //grab id from the url
+    const spotId = parseInt(req.params.spotId, 10);
+    //grab the spot location from the database
+    const loc = await SpotLocation.findOne({
+        where: {
+            spotId: spotId,
+        },
+        order: [['createdAt', 'DESC']]
+    });
+    if (loc) {
+
+        return res.json(loc);
+    } else {
+        return res.json({ message: 'Page not Found! Redirecting back to Home.' })
+    }
+
+}))
 
 module.exports = router;
