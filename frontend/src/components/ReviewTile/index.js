@@ -29,45 +29,46 @@ function ReviewTile() {
         setEdit(true)
         setReviewBody(review.body)
     }
-
+    
     const handleSubmit = (e) => {
-            e.preventDefault();
-            if (sessionUser) {
+        e.preventDefault();
+        if (sessionUser) {
             setErrors([]);
             return dispatch(reviewActions.updateReview({ reviewBody, sessionUser, currentSpot, target }))
-                .then(() => setEdit(false))
-                .catch(async (res) => {
-                        const data = await res.json();
-                        if (data && data.errors) setErrors(data.errors);
-                    });
-            }
-            return setErrors(['Errors in editing the specified review for the current Vacation Spot']);
+            .then(() => setEdit(false))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setErrors(data.errors);
+            });
+        }
+        return setErrors(['Errors in editing the specified review for the current Vacation Spot']);
     };
-
+    
     const handleDelete = (e) => {
         e.preventDefault();
         if (sessionUser) {
             setErrors([]);
             return dispatch(reviewActions.deleteReview({ currentSpot, sessionUser, target }))
-                .then(() => setEdit(false))
-                .catch(async (res) => {
-                    const data = await res.json();
-                    if (data && data.errors) setErrors(data.errors);
-                });
+            .then(() => setEdit(false))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setErrors(data.errors);
+            });
         }
         return setErrors(['Errors in deleting the current Vacation Spot']);
     };
-
+    
+    
+    
+    
+    if (currentSpot && allReviews) {
+        console.log('reviews length', allReviews.length)
         
-        
-        
-        if (currentSpot) {
-            
         return (
             <>
                 <h4>{currentSpot.spotName}'s Reviews</h4>
                 { edit ? null : <ReviewForm /> }
-                {allReviews?.map((review, idx) => {
+                {allReviews.map((review, idx) => {
                     if (!edit) {
                         return (
                             <div key={review.id} className='review-box'>

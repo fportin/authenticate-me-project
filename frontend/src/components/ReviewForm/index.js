@@ -15,6 +15,7 @@ function ReviewForm() {
   
     useEffect(() => {
         dispatch(reviewActions.getReviews(currentSpot.id))
+        setReviewSubmitted(false)
     }, [currentSpot.id, dispatch, reviewSubmitted]);
 
 
@@ -27,7 +28,6 @@ function ReviewForm() {
                 e.preventDefault();
                 if (sessionUser) {
                     setErrors([]);
-                    console.log('handleSubmit value', reviewBody)
                     return dispatch(reviewActions.createReview({ reviewBody, sessionUser, currentSpot }))
                         .then(() => { 
                             setReviewBody('')

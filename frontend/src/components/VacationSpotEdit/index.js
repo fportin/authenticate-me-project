@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory, Redirect } from "react-router-dom";
 
 import * as spotActions from "../../store/vacation-spots";
+import * as spotLocationActions from "../../store/spot-location";
 import './VacationSpotEdit.css';
 
 function VacationSpotEdit() {
@@ -51,6 +52,10 @@ function VacationSpotEdit() {
                     if (sessionUser) {
                         setErrors([]);
                         return dispatch(spotActions.updateSpot({ spotId, spotName, activities, location, pictureURL, sessionUser }))
+                            .then((res) => {
+                                const { id, location } = res
+                                dispatch(spotLocationActions.updateSpotLocation({ id, location }))
+                            })
                             .then(() => history.push(`/spots/${spotId}`))
                             .catch(async (res) => {
                                 const data = await res.json();

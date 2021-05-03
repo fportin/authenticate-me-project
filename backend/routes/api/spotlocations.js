@@ -29,16 +29,41 @@ router.get('/:spotId(\\d+)', asyncHandler(async (req, res) => {
     const loc = await SpotLocation.findOne({
         where: {
             spotId: spotId,
-        },
-        order: [['createdAt', 'DESC']]
+        }
     });
     if (loc) {
-
-        return res.json(loc);
+        const result = res.json(loc);
+        return result
     } else {
         return res.json({ message: 'Page not Found! Redirecting back to Home.' })
     }
 
 }))
+
+router.put(
+    '/:spotId(\\d+)/update',
+    requireAuth,
+    asyncHandler(async (req, res) => {
+        const { location, coordinates, spotId } = req.body;
+        //grab the spot location from the database
+        const loc = await SpotLocation.findOne({
+            where: {
+                spotId: spotId,
+            },
+            order: [['createdAt', 'DESC']]
+        });
+
+        if (loc && loc.spotId === spotId) {
+            const updatedLoc = await SpotLocation.updateSpotLocation({ loc, location, coordinates });
+            
+            return res.json({
+                updatedLoc,
+            });
+
+        } else {
+            return res.json({ message: 'Resource not Found! Redirecting back to Home.' })
+        }
+    }),
+);
 
 module.exports = router;

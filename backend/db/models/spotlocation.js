@@ -29,7 +29,15 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     return loc;
-  }
+  };
+  SpotLocation.updateSpotLocation = async function ({ loc, location, coordinates }) {
+    
+    const updatedLoc = await loc.update({
+      location,
+      coordinates
+    });
+    return updatedLoc;
+  };
 
   return SpotLocation;
 };

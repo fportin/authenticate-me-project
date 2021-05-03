@@ -22,7 +22,7 @@ function VacationSpotFormPage() {
             if (sessionUser) {
                 setErrors([]);
                 return dispatch(spotActions.createSpot({ spotName, activities, location, pictureURL, sessionUser }))
-                    .then(async(res) => {
+                    .then((res) => {
                         const { id, location } = res
                         dispatch(spotLocationActions.createSpotLocation({ id, location }))
                     })

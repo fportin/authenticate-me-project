@@ -9,8 +9,8 @@ import spotLocationReducer from './spot-location'
 const rootReducer = combineReducers({
     session: sessionReducer,
     places: spotReducer,
-    reviews: reviewReducer,
-    locations: spotLocationReducer
+    locations: spotLocationReducer,
+    reviews: reviewReducer
 });
 
 

@@ -22,7 +22,6 @@ export const createReview = (spot) => async (dispatch) => {
     const { reviewBody, sessionUser, currentSpot } = spot;
     const userId = sessionUser.id;
     const spotId = currentSpot.id;
-    console.log('user', userId, 'spot', spotId, 'review', reviewBody)
     const res = await csrfFetch(`/api/reviews/create`, {
         method: "POST",
         body: JSON.stringify({
