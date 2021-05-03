@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     VacationSpot.belongsTo(models.User, {foreignKey: 'userId'})
     VacationSpot.hasMany(models.Review, {foreignKey: 'spotId'})
+    VacationSpot.hasOne(models.SpotLocation, {foreignKey: 'spotId'})
   };
   VacationSpot.createSpot = async function ({ spotName, activities, location, pictureURL, sessionUser }) {
     const userId = sessionUser.id;

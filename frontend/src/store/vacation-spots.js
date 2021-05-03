@@ -32,7 +32,7 @@ export const createSpot = (spot) => async (dispatch) => {
     });
     const data = await res.json();
     dispatch(setSpot(data.spot));
-    return res;
+    return data.spot;
 };
 
 export const getSpot = (spotId) => async (dispatch) => {

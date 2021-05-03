@@ -1,21 +1,20 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Reviews', {
+    return queryInterface.createTable('SpotLocations', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      body: {
+      location: {
         allowNull: false,
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
-      userId: {
+      coordinates: {
         allowNull: false,
-        type: Sequelize.INTEGER,
-        references: { model: 'Users' }
+        type: Sequelize.ARRAY(Sequelize.DECIMAL)
       },
       spotId: {
         allowNull: false,
@@ -34,6 +33,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Reviews');
+    return queryInterface.dropTable('SpotLocations');
   }
 };

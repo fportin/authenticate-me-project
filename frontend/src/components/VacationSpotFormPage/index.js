@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 
 import * as spotActions from "../../store/vacation-spots";
+import * as spotLocationActions from "../../store/spot-location";
 import './VacationSpotForm.css';
 
 function VacationSpotFormPage() {
@@ -14,13 +15,17 @@ function VacationSpotFormPage() {
     const [location, setLocation] = useState("");
     const [pictureURL, setPictureURL] = useState("");
     const [errors, setErrors] = useState([]);
-
+    
     if (sessionUser) {
         const handleSubmit = (e) => {
             e.preventDefault();
             if (sessionUser) {
                 setErrors([]);
                 return dispatch(spotActions.createSpot({ spotName, activities, location, pictureURL, sessionUser }))
+                    .then(async(res) => {
+                        const { id, location } = res
+                        dispatch(spotLocationActions.createSpotLocation({ id, location }))
+                    })
                     .then(() => history.push(`/`))
                     .catch(async (res) => {
                         const data = await res.json();

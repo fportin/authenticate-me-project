@@ -32,7 +32,7 @@ function VacationSpotPage() {
                     <img src={currentSpot.pictureURL} alt='place' className='spot-picture'/>
                     <h1 className='spot-name'>{currentSpot.spotName}</h1>
                     <h4>Location: {currentSpot.location}</h4>
-                    <SpotMap />
+                    <SpotMap location={currentSpot.location} />
                     <p>Activities: {currentSpot.activities}</p>
                     {sessionUser?.id === currentSpot.userId ? <button onClick={editOnClick}>Edit</button> : null}
                     <ReviewTile />

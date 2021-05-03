@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     spotId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      onDelete: "CASCADE",
     }
   }, {});
   Review.associate = function(models) {
@@ -33,7 +34,6 @@ module.exports = (sequelize, DataTypes) => {
   };
   Review.updateReview = async function ({ targetReview, reviewBody }) {
     const body = reviewBody
-    console.log('updateREv', body)
     const spot = await targetReview.update({
       body,
     });
