@@ -26,6 +26,8 @@ const LoginForm = () => {
 
     }
 
+    
+
     return (
         <div className='login-page__container'>
             <form className='login-page__form' onSubmit={handleSubmit}>
@@ -41,6 +43,10 @@ const LoginForm = () => {
                     <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} required />
                 </label>
                 <button type='submit'>Log In</button>
+                <button className='demo-user__button' type='submit' onClick={(e) => {
+                    setCredential('Light')
+                    setPassword('password')
+                    }}>Login as Demo User</button>
             </form>
         </div>
     )
