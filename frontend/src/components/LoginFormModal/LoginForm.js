@@ -45,7 +45,7 @@ const LoginForm = () => {
                 <button type='submit'>Log In</button>
                 <button className='demo-user__button' type='submit' onClick={(e) => {
                     setCredential('Light')
-                    setPassword('password')
+                    setPassword('MaliMali1133')
                     }}>Login as Demo User</button>
             </form>
         </div>
