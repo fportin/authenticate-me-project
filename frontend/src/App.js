@@ -9,6 +9,7 @@ import VacationSpotPage from "./components/VacationSpotPage"
 import VacationSpotEdit from "./components/VacationSpotEdit"
 import FrontPage from './components/FrontPage';
 import GreetingPage from './components/GreetingPage';
+import Footer from './components/Footer';
 
 
 import * as sessionActions from './store/session';
@@ -16,6 +17,7 @@ import * as sessionActions from './store/session';
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
@@ -48,6 +50,7 @@ function App() {
           <Redirect to='/' />
         </Switch>
       )}
+      <Footer />
     </div>
   );
 }

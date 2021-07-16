@@ -46,15 +46,22 @@ function Navigation({ isLoaded }) {
             </>
         )
     }
+    
+    const navBar = document.querySelector('.navbar__container')
+    if (location.pathname.match(/\/spots\/\d+/)) {
+        navBar?.classList.add('navbar-spots')
+    } else {
+        navBar?.classList.remove('navbar-spots')
+    }
 
     return (
         <div className='navbar__container'>
             <h1 className='logo' onClick={handleClick}>FunFinder🔎</h1>
             <ul>
             
-                    { searchBarActive }
+                { searchBarActive }
                 {/* <NavLink className='navbar-home' exact to="/" onClick={handleClick}>Home</NavLink> */}
-                    {isLoaded && sessionLinks}
+                {isLoaded && sessionLinks}
 
             </ul>
         </div>

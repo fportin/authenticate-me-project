@@ -15,6 +15,7 @@ function FrontPage() {
     const allReviews = useSelector((state) => state.reviews.allReviews);
     const [errors, setErrors] = useState([]);
 
+    document.body.classList.remove('body-spot-page');
 
     useEffect(() => {
         dispatch(spotActions.getSpots())

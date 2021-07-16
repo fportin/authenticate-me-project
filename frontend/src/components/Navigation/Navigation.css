@@ -5,12 +5,14 @@
     justify-content: space-between;
     height: 100px;
     position: fixed;
-    /* position: absolute; */
     width: 100%;
     z-index: 99;
     top: 0;
     background-color: black;
-    /* border-bottom: 1px dotted black; */
+}
+
+.navbar-spots {
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .navbar__container > ul {
@@ -22,7 +24,7 @@
     margin-top: 10px;
     color: white;
     font-size: 20px;
-    font-family: 'Jacques Francois', serif;
+    font-family: 'Encode Sans Condensed', sans-serif;
     /* border: 1px solid white; */
 }
 
@@ -71,12 +73,13 @@
     align-self: center;
     padding-left: 3%;
     cursor: pointer;
-    filter: contrast(500%);
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    /* filter: contrast(100%); */
 }
 
 .signup-button {
     text-decoration: none;
-    color: white;
+    color: #EE4723;
     margin-right: 25px;
     margin-left: 15px;
 }

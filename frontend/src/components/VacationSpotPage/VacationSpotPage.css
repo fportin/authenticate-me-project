@@ -1,49 +1,167 @@
+.body-spot-page {
+    height: 100%;
+    overflow: hidden;
+}
+
 .spot-page {
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    background-color: whitesmoke;
-}
-
-.spot-page__container{
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
+    /* display:s flex; */
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-top: 120px;
-    border: 1px solid silver;
-    border-radius: 25px;
-    width: 52%;
-    background-color: white;
+    background-color: whitesmoke;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 67.5px);
+    justify-content: flex-end;
+    padding-top: 100px;
+    width: 100vw;
+    overflow: hidden;
 }
 
-.spot-picture {
-    width: 55vw;
-    height: 50vh;
-    border: 1px hidden;
-    border-width: 2px 4px;
-    border-radius: 5px;
+.spot-page__container1{
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 167.5px);
+    animation: fadeInEffect ease-in 0.2s;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+    /* border: 1px solid red; */
 }
 
 .spot-name {
-    stroke: white;
-    stroke-dasharray: 100px;
-    /* stroke-dashoffset: 1000px; */
-    font-family: 'Yesteryear', cursive;
-    font-size: 50px;
-    color: sandybrown;
-    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    box-sizing: border-box;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 5vw;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 1.39vw;
+    margin-right: -1.39vw;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+    width: calc(70% - 1.39vw);
 }
 
-.spot-location {
-    font-family: 'Jacques Francois', serif;
-    font-size: 15px;
-
+hr {
+    border: none;
+    /* margin-left: 0; */
+    border-bottom: 0.4vh solid #ff000d;
+    box-shadow: 2px 3px 5px rgba(0,0,0,1);
+    width: calc(75%);
 }
 
 .spot-activities {
-    font-family: 'Jacques Francois', serif;
-    font-size: 20px;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 1.5vw;
+    color: white;
+    /* text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+}
+
+.spot-page1-btn__container {
+    display: flex;
+}
+
+.show-container2-btn, 
+.edit-spot-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 7.5px;
+    font-size: 1.2vw;
+    width: 12.5vw;
+    height: 150%;
+    cursor: pointer;
+    border: 1px solid gainsboro;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.show-container2-btn:hover,
+.edit-spot-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+    /* color: black; */
+}
+
+.spot-page__container2{
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid silver;
+    width: 100vw;
+    height: calc(100vh - 167.5px);
+    /* background-color: rgba(255, 255, 255, 0.25); */
+    background-color: rgba(0, 0, 0, 0.25);
+    animation: slideUpEffect ease-out 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+    bottom: calc(0% + 67.5px);
+    transition: bottom ease-out 0.5s;
+}
+
+.close-container {
+    bottom: -100%;
+}
+
+.spot-page__container2-a {
+    height: 100%;
+    width: 40%;
+    /* border: 1px solid red; */
+    padding-left: 1.5%;
+    padding-right: 5%;
+    padding-top: 1%;
+}
+
+.back-arrow-icon {
+    height: 40px;
+    width: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.back-arrow-icon:hover {
+    filter: invert(100%);
+    background-color: transparent;
+}
+
+.spot-location {
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 1.25vw;
+    color: white;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+    margin-top: 1%;
+    margin-left: 1vw;
+
+}
+
+.spot-page__container2-b {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 60%;
+    padding-top: 0.3%;
+}
+
+@keyframes slideUpEffect {
+    0% {
+        bottom: -100%;
+    }
+    100% {
+        bottom: calc(0% + 67.5px);
+    }
 }

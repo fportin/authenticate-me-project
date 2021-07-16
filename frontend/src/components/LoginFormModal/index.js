@@ -20,7 +20,7 @@ const LoginFormModal = () => {
 
     if (showModal) return (
         <Modal onClose={handleOnClose}>
-            <LoginForm />
+            <LoginForm close={handleOnClose} />
         </Modal>
     )
 

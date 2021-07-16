@@ -1,5 +1,14 @@
+.login-button {
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    border-color: #f9f9f9;
+    border-style: hidden;
+    border-radius: 45%;
+}
+
 .login-page__container {
-    background-color: aqua;
+    background-color: rgba(0, 0, 0, 0.25);
     background-image: url("../../login-page.jpg");
     height: 100%;
     width: 100%;
@@ -11,49 +20,149 @@
     color: white;
     text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     font-size: 30px;
+    font-family: 'Encode Sans Condensed', sans-serif;
     box-sizing: border-box;
-    animation: fadeInEffect ease-in 2s;
+    animation: fadeInEffect ease-in 1s;
     animation-iteration-count: 1;
     animation-direction: forwards;
 }
 
 .login-page__form {
-    /* margin-bottom: 50%; */
     display: flex;
-    /* border: 1px solid red; */
-    height: 315px;
+    height: 95%;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 10%;
 }
 
-.login-button {
-    background-color: transparent;
+.login-page__greeting {
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.3vh solid #ff000d;
+    /* border: 1px solid rebeccapurple; */
+    /* padding: 3%; */
+    /* padding-bottom: 0; */
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.login-page-logo {
+    font-family: 'Yesteryear', cursive;
+    font-weight: 900;
     color: white;
-    font-size: 20px;
-    font-family: 'Jacques Francois', serif;
-    border-color: #f9f9f9;
-    border-style: hidden;
-    border-radius: 45%;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin: 0 2%;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 35px;
+    /* border: 1px solid green; */
+}
+
+.login-page-logo::after {
+    content: "";
+    position: absolute;
+    top: 32%;
+    height: 5.5%;
+    width: 15%;
+    /* border-top: 0.3vh solid #ff000d; */
+    border-radius: 50%;
+}
+
+.login-page__errors {
+    width: 60%;
+    height: 40px;
+    position: absolute;
+    top: 198px;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+}
+
+.login-page-inputs__container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-end; */
+    font-size: 1.1vw;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+    height: 8vh;
+    justify-content: space-between;
+}
+
+.login-page-username-label,
+.login-page-password-label {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    width: 20vw;
+    gap: 5%;
+}
+
+.login-page-input-box {
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 16px 0 10px;
+    font-size: 0.75vw;
+    color: black;
+    overflow: auto;
+    box-sizing: border-box;
+    width: 54%;
+    height: 3vh;
+    transition: background-color ease-in 0.25s;
+}
+
+.login-page-input-box:hover,
+.login-page-input-box:focus {
+    background-color: white;
+}
+
+.login-btn-container {
+    box-sizing: border-box;
+    display: flex;
+    height: 11%;
+    width: 20vw;
+    justify-content: space-between
+}
+
+
+.login-btn,
+.login-cancel-btn,
+.demo-user__button {
+    padding: 1.5% 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 7.5px;
+    font-size: 1vw;
+    width: 9.5vw;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+    /* height: 150%; */
+    cursor: pointer;
+    border: 1px solid gainsboro;
+    /* margin-left: 2%; */
+    /* margin-right: 2%; */
 }
 
 .demo-user__button {
-    padding: 5px 15px;
-    font-size: 20px;
-    font-family: 'Jacques Francois', serif;
-    border-radius: 5px;
-    background-color: black;
-    color: white;
-    border: 0.5px solid silver;
-    transition: all ease-in 0.5s;
-
+    border: none;
+    background-color: #ff000d;
+    width: 20vw;
 }
 
+.login-btn:hover,
+.login-cancel-btn:hover,
 .demo-user__button:hover {
     background-color: whitesmoke;
     color: black;
-    border: 0.5px solid silver;
-
+    text-shadow: none;
 }
 
 @keyframes fadeInEffect {

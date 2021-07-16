@@ -21,7 +21,7 @@ function ReviewForm() {
 
     if (currentSpot) {
         if (!sessionUser) {
-            return (<h1>Please Login to Comment.</h1>)
+            return (<div className='review-form-message'>Please Login to Review.</div>)
         } else {
 
             const handleSubmit = (e) => {
@@ -41,24 +41,40 @@ function ReviewForm() {
                 return setErrors(['Errors in creating a review for the current Vacation Spot']);
             };
 
+            const handleCancel = (e) => {
+                e.preventDefault();
+                setReviewBody('');
+                setErrors([])
+            }
+
+            let errorBox;
+            if (errors.length !== 0) {
+                errorBox = (
+                    <ul className='review-form-errors'>
+                        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                    </ul>
+                )
+            }
+
             
             return (
                 <>
-                    <h1 className='review-form-title'>Post a Review:</h1>
-                    <form onSubmit={handleSubmit}>
-                        <ul>
-                            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                        </ul>
-                        <label>
-                            Review:
+                    <form className='review-form' onSubmit={handleSubmit}>
+                        <label className='review-form-label'>
+                            Post a Review:
                                 <textarea
                                 value={reviewBody || ''}
                                 onChange={(e) => setReviewBody(e.target.value)}
+                                className='review-form-box'
+                                placeholder={`Tell us about your ${currentSpot.spotName} experience.`}
                             />
                         </label>
-                        <button type="submit">Post</button>
+                        <div className='review-form-btn__container'>
+                            <button className='review-form-btn' type="submit">Submit</button>
+                            <button className='cancel-form-btn' type="reset" onClick={handleCancel}>Cancel</button> 
+                            {errorBox}
+                        </div>
                     </form>
-                    {/* <button type="submit" onClick={handleDelete}>Delete</button> */}
                 </>
             );
         }

@@ -1,5 +1,100 @@
-.review-form-title {
-    font-family: 'Jacques Francois', serif;
-    font-size: 20px;
+.review-form{
+    font-family: 'Encode Sans Condensed', sans-serif;
+    border-bottom: 1px solid gainsboro;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* justify-content: flex-start; */
+    width: 97.5%;
+    /* height: 20.5%; */
+    overflow: hidden;
+    margin-top: 1%;
+    position: relative;
+    padding-bottom: 1%;
 
+}
+
+.review-form-errors {
+    position: absolute;
+    color: red;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    bottom: -4%;
+    left: 45%;
+    font-size: 1vw;
+    width: auto;
+    z-index: 100;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+}
+
+.review-form-label {
+    /* font-family: 'Encode Sans Condensed', sans-serif; */
+    color: white;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+    font-size: 1.5vw;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    gap: 1%;
+    align-items: center;
+}
+
+.review-form-box {
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 16px 5px 10px;
+    font-size: 1vw;
+    color: black;
+    overflow: auto;
+    resize: none;
+    box-sizing: border-box;
+    width: 82.5%;
+    height: 10vh;
+    transition: background-color ease-in 0.25s;
+}
+
+.review-form-box:hover,
+.review-form-box:focus,
+.review-form-box:not(:placeholder-shown) {
+    background-color: white;
+}
+
+.review-form-btn__container {
+    /* border: 1px solid red; */
+    align-self: flex-start;
+    width: 15vw;
+    margin: 1%;
+    margin-left: 16%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.review-form-btn,
+.cancel-form-btn {
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 7.5px;
+    font-size: 1.2vw;
+    width: 7vw;
+    cursor: pointer;
+    border: 1px solid gainsboro;
+}
+
+.review-form-btn:hover,
+.cancel-form-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+.review-form-message {
+    margin-top: 1%;
+    font-size: 1.5vw;
+    color: red;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
 }

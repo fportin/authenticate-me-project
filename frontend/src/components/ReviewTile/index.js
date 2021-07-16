@@ -43,6 +43,12 @@ function ReviewTile() {
         }
         return setErrors(['Errors in editing the specified review for the current Vacation Spot']);
     };
+
+    const handleCancel = (e) => {
+        e.preventDefault();
+        setEdit(false);
+        setErrors([])
+    }
     
     const handleDelete = (e) => {
         e.preventDefault();
@@ -58,6 +64,14 @@ function ReviewTile() {
         return setErrors(['Errors in deleting the current Vacation Spot']);
     };
     
+    let errorBox;
+    if (errors.length !== 0) {
+        errorBox = (
+            <ul className='edit-review-form-errors'>
+                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+            </ul>
+        )
+    }
     
     
     
@@ -65,37 +79,43 @@ function ReviewTile() {
         console.log('reviews length', allReviews.length)
         
         return (
-            <>
-                <h4 className='review-title'>{currentSpot.spotName}'s Reviews</h4>
+            <div className='review-tile__container'>
+                <div className='review-title'>User Reviews</div>
                 { edit ? null : <ReviewForm /> }
                 {allReviews.map((review, idx) => {
                     if (!edit) {
                         return (
                             <div key={review.id} className='review-box'>
-                                <h3>{review.User.username}</h3>
-                                <h5>{review.body}</h5>
-                                {sessionUser?.id === review.userId ? <button type='submit' onClick={handleClick(review)}>Edit</button> : null}
+                                <div className='review-box-top'>
+                                    <div class='review-box-user'>{review.User.username}</div>
+                                    {sessionUser?.id === review.userId ? <button type='submit' onClick={handleClick(review)} className='edit-review-btn'>Edit</button> : null}
+                                </div>
+                                <div className='review-box-body'>{review.body}</div>
+                                <div className='review-box-date'>{review.createdAt.toString().slice(0, 10)}</div>
                             </div>
                         )
 
                     } else {
+                        //EDIT FORM
                         if (sessionUser?.id === review.userId && target === review.id) {
                             return (
-                                <div key={idx} className='review-box'>
-                                    <form onSubmit={handleSubmit}>
-                                        <ul>
-                                            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                                        </ul>
-                                        <label>
-                                            Review:
-                                    <textarea
-                                                value={reviewBody || ""}
-                                                onChange={(e) => setReviewBody(e.target.value)}
-                                            />
+                                <div key={idx} className='edit-review-form__container'>
+                                    <form onSubmit={handleSubmit} className='edit-review-form'>
+                                        <label className='edit-review-form-label'>
+                                            Edit Review:
+                                        <textarea
+                                            value={reviewBody || ""}
+                                            onChange={(e) => setReviewBody(e.target.value)}
+                                            className='edit-review-form-box'
+                                        />
                                         </label>
-                                        <button type="submit">Edit Review</button>
+                                        <div className='edit-review-form-btn__container'>
+                                            <button className='review-form-btn' type="submit">Submit</button>
+                                            <button className='review-form-btn' type="reset" onClick={handleCancel}>Cancel</button>
+                                            <button className='review-form-btn' type="button" onClick={handleDelete}>Delete</button>
+                                            {errorBox}
+                                        </div>
                                     </form>
-                                    <button type="submit" onClick={handleDelete}>Delete</button>
                                 </div>
                             )
 
@@ -103,7 +123,7 @@ function ReviewTile() {
                         return (<></>)
                     }
                 })}
-            </>
+            </div>
         )
 
     }
