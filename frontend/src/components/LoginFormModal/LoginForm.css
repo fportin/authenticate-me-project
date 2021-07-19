@@ -83,7 +83,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 1vw;
+    font-size: 1.2vw;
 }
 
 .login-page-inputs__container {
@@ -91,7 +91,7 @@
     display: flex;
     flex-direction: column;
     /* align-items: flex-end; */
-    font-size: 1.1vw;
+    font-size: 1.2vw;
     text-shadow: 2px 3px 5px rgba(0,0,0,1);
     height: 8vh;
     justify-content: space-between;
@@ -103,15 +103,15 @@
     display: flex;
     justify-content: flex-end;
     width: 20vw;
-    gap: 5%;
+    gap: 1.5%;
 }
 
 .login-page-input-box {
     border: none;
     outline: none;
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 5px 16px 0 10px;
-    font-size: 0.75vw;
+    padding: 5px 16px 1px 10px;
+    font-size: 1vw;
     color: black;
     overflow: auto;
     box-sizing: border-box;

@@ -1,23 +1,134 @@
 .edit-spot__container {
     height: 100%;
     width: 100%;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
     display: flex;
-    color: black;
+    color: white;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
     font-size: 30px;
     box-sizing: border-box;
     flex-direction: column;
     align-items: center;
+    /* justify-content: flex-start; */
+    /* border: 1px solid green; */
+}
+
+.edit-spot-title {
+    font-size: 4vw;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
     justify-content: center;
-    margin-top: 100px;
+    position: relative;
+    padding-bottom: 5%;
 }
 
 .edit-spot__form {
+    width: 80%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1%;
     /* justify-content: space-evenly; */
+}
+
+.edit-spot-form-errors {
+    position: absolute;
+    color: red;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    bottom: 0;
+    margin-bottom: 0;
+    font-size: 1.3vw;
+    width: auto;
+    z-index: 100;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+}
+
+.edit-spot-form-label {
+    /* text-align: center; */
+    font-size: 1.75vw;
+    width: 75%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1%;
+    margin-bottom: 0.75%;
+    margin-top: 0.75%;
+}
+
+.edit-spot-form-box {
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 16px 1px 10px;
+    font-size: 1.25vw;
+    color: black;
+    overflow: auto;
+    resize: none;
+    box-sizing: border-box;
+    width: 80%;
+    height: 5vh;
+    transition: background-color ease-in 0.25s;
+}
+
+.activities {
+    height: 15vh;
+}
+
+.edit-spot-form-box::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.edit-spot-form-box:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.edit-spot-form-box:focus {
+    background-color: white;
+}
+
+.edit-spot-form-box:focus::placeholder {
+    color: rgb(170, 170, 170);
+}
+
+.edit-spot-form-btn__container {
+    align-self: center;
+    width: calc(47vw - 2px);
+    margin: 1%;
+    margin-top: 2%;
+    margin-left: calc(16% - 2px);
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+
+.edit-spot-form-btn {
+    padding: 1%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 7.5px;
+    font-size: 1.2vw;
+    width: 14vw;
+    cursor: pointer;
+    border: 1px solid gainsboro;
+}
+
+.edit-spot-form-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+.delete {
+    color: #ff000d;
+    border-color: #ff000d;
+}
+
+.delete:hover {
+    color: #ff000d;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
 }

@@ -48,7 +48,7 @@ function Navigation({ isLoaded }) {
     }
     
     const navBar = document.querySelector('.navbar__container')
-    if (location.pathname.match(/\/spots\/\d+/)) {
+    if (location.pathname.match(/\/spots\/\d+/) || location.pathname.match("/create-spot")) {
         navBar?.classList.add('navbar-spots')
     } else {
         navBar?.classList.remove('navbar-spots')

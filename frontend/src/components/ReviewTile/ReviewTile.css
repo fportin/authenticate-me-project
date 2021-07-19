@@ -103,7 +103,8 @@
 }
 
 .edit-review-form-box:hover,
-.edit-review-form-box:focus {
+.edit-review-form-box:focus,
+.edit-review-form-box:not(:placeholder-shown) {
     background-color: white;
 }
 

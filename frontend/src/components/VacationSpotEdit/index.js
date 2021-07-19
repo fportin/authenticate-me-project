@@ -6,7 +6,7 @@ import * as spotActions from "../../store/vacation-spots";
 import * as spotLocationActions from "../../store/spot-location";
 import './VacationSpotEdit.css';
 
-function VacationSpotEdit() {
+function VacationSpotEdit({ close }) {
     const dispatch = useDispatch();
     const { spotId } = useParams();
     const history = useHistory();
@@ -56,7 +56,7 @@ function VacationSpotEdit() {
                                 const { id, location } = res
                                 dispatch(spotLocationActions.updateSpotLocation({ id, location }))
                             })
-                            .then(() => history.push(`/spots/${spotId}`))
+                            .then(() => close())
                             .catch(async (res) => {
                                 const data = await res.json();
                                 if (data && data.errors) setErrors(data.errors);
@@ -64,6 +64,11 @@ function VacationSpotEdit() {
                     }
                     return setErrors(['Errors in editing the current Vacation Spot']);
                 };
+
+                const handleCancel = (e) => {
+                    e.preventDefault();
+                    close()
+                }
 
                 const handleDelete = (e) => {
                     e.preventDefault();
@@ -82,47 +87,59 @@ function VacationSpotEdit() {
 
                 return (
                     <div className='edit-spot__container'>
-                        <h1>Edit {currentSpot.spotName}'s Page</h1>
-                        <form className='edit-spot__form' onSubmit={handleSubmit}>
-                            <ul>
+                        <div className='edit-spot-title'>Edit {currentSpot.spotName}'s Page
+                            <ul className='edit-spot-form-errors'>
                                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                             </ul>
-                            <label>
+                        </div>
+                        <form className='edit-spot__form' onSubmit={handleSubmit}>
+                            <label className='edit-spot-form-label'>
                                 Name:
                                 <input
                                     type="text"
                                     value={spotName || ''}
                                     onChange={(e) => setSpotName(e.target.value)}
+                                    placeholder="The Name of the Place."
+                                    className='edit-spot-form-box'
                                     required
                                 />
                             </label>
-                            <label>
+                            <label className='edit-spot-form-label'>
                                 Activities:
                                 <textarea
                                     value={activities || ''}
                                     onChange={(e) => setActivities(e.target.value)}
+                                    placeholder="Things you could do at this location."
+                                    className='edit-spot-form-box activities'
                                 />
                             </label>
-                            <label>
+                            <label className='edit-spot-form-label'>
                                 Location:
                                 <input
                                     type="text"
                                     value={location || ''}
                                     onChange={(e) => setLocation(e.target.value)}
+                                    placeholder="Address/Town/City/State/Country"
+                                    className='edit-spot-form-box'
                                     required
                                 />
                             </label>
-                            <label>
+                            <label className='edit-spot-form-label'>
                                 Picture URL:
                                 <input
                                     type="url"
                                     value={pictureURL || ''}
                                     onChange={(e) => setPictureURL(e.target.value)}
+                                    placeholder="URL of the place's image. (Use a 4K image for best results)"
+                                    className='edit-spot-form-box'
                                 />
                             </label>
-                            <button type="submit">Post a Vacation Spot</button>
+                            <div className='edit-spot-form-btn__container'>
+                                <button className='edit-spot-form-btn' type="submit">Submit</button>
+                                <button className='edit-spot-form-btn' type="reset" onClick={handleCancel}>Cancel</button>
+                                <button className='edit-spot-form-btn delete' type="button" onClick={handleDelete}>Delete</button>
+                            </div>
                         </form>
-                        <button type="submit" onClick={handleDelete}>Delete</button>
                     </div>
                 );
             }

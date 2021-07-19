@@ -107,6 +107,7 @@ function ReviewTile() {
                                             value={reviewBody || ""}
                                             onChange={(e) => setReviewBody(e.target.value)}
                                             className='edit-review-form-box'
+                                            placeholder={`Tell us about your ${currentSpot.spotName} experience.`}
                                         />
                                         </label>
                                         <div className='edit-review-form-btn__container'>
