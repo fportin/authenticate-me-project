@@ -16,8 +16,8 @@ function Navigation({ isLoaded }) {
 
     const handleClick = (e) => {
         e.preventDefault();
+        localStorage.removeItem('currentSearchWord')
         history.push(`/`)
-        localStorage.setItem('currentSearchWord', '')
         dispatch(spotActions.getSpots())
     }
 
@@ -32,14 +32,14 @@ function Navigation({ isLoaded }) {
     } else {
         sessionLinks = (
             <>
-                <NavLink className='signup-button' to="/signup">Sign Up</NavLink>
+                <NavLink className='signup-button' exact to="/signup">Sign Up</NavLink>
                 <LoginFormModal />
             </>
         );
     }
 
     let searchBarActive;
-    if (location.pathname !== '/') {
+    if (location.pathname !== '/' && location.pathname !== '/search') {
         searchBarActive = (
             <>
             <Searchbar /> 

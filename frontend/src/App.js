@@ -9,6 +9,7 @@ import VacationSpotPage from "./components/VacationSpotPage"
 import VacationSpotEdit from "./components/VacationSpotEdit"
 import FrontPage from './components/FrontPage';
 import GreetingPage from './components/GreetingPage';
+import SearchPage from './components/SearchPage';
 import Footer from './components/Footer';
 
 
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route exact path="/create-spot">
             <VacationSpotFormPage />
+          </Route>
+          <Route exact path="/search">
+            <SearchPage />
           </Route>
           <Route exact path="/spots/:spotId">
             <VacationSpotPage />

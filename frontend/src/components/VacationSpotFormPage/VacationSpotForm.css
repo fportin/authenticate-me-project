@@ -19,7 +19,7 @@
     animation: switchEffect ease-in-out 30s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 
 .spot-page__form {

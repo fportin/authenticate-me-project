@@ -1,11 +1,18 @@
+.search-bar__container {
+    box-sizing: border-box;
+    display: flex;
+    width: 350px;
+    height: 80px;
+}
+
 .search-bar {
     color: black;
     border: none;
-    width: 180px;
-    height: 30px;
-    border-radius: 5px;
+    width: 330px;
+    height: 40px;
+    border-radius: 10px 0px 0px 10px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     padding-left: 10px;
 }
 
@@ -14,21 +21,22 @@
 }
 
 .search-button {
-    border: 1px hidden;
-    background-color: transparent;
-    font-size: 25px;
-    filter: contrast(500%);
-    transition: invert 0.01s ease-in-out;
-    transition: transform 0.5s ease-in-out;    
+    border-radius: 0px 10px 10px 0px;
+    background-color: black;
+    background-size: 35%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 50%;
+    width: 15%;
+    transition: background-color 0.15s ease-in-out;
+    cursor: pointer;   
 }
 
 .search-button:hover {
-    cursor: pointer;
-    transform: rotate(360deg);   
+    background-color: gray;
 }
 
 .search-button:active {
-    cursor: pointer;
     filter: invert(100);   
 }
 
@@ -49,10 +57,10 @@
 .search-bar__front-page {
     border: none;
     width: 30%;
-    height: 10%;
-    border-radius: 20px;
+    height: 15%;
+    border-radius: 10px 0px 0px 10px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
     padding-left: 1.5%;
 }
 
@@ -61,42 +69,41 @@
 }
 
 .search-button__front-page {
-    /* border-radius: 45px; */
-    border: 1px hidden;
-    background-color: transparent;
-    font-size: 40px;
-    filter: contrast(500%);
-    transition: invert 0.01s ease-in-out;
-    transition: transform 0.5s ease-in-out;
+    border-radius: 0;
+    background-color: black;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 15%;
+    width: 4%;
+    transition: background-color 0.15s ease-in-out;
+    cursor: pointer;
 }
 
 .search-button__front-page:hover {
-    cursor: pointer;
-    transform: rotate(360deg);
+    background-color: gray;
 }
 
 .search-button__front-page:active {
-    cursor: pointer;
     filter: invert(100);
 }
 
 .reset-button {
     border: none;
-    font-size: 40px;
-    background-color: transparent;
-    color: rgb(233, 27, 27);
-    text-shadow: 2px 2px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-    transition: color 0.01s ease-in-out;
-    transition: transform 0.5s ease-in-out;
+    font-size: 18px;
+    height: 15%;
+    border-left: 1px solid gray;
+    border-radius: 0px 10px 10px 0px;
+    background-color: black;
+    color: white;
+    transition: background-color 0.15s ease-in-out;
+    cursor: pointer;
 }
 
 .reset-button:hover {
-    cursor: pointer;
-    transform: rotate(-360deg);
+    background-color: gray;
 }
 
 .reset-button:active {
-    cursor: pointer;
-    /* filter: invert(100); */
-    color: white;
+    color: black;
 }
