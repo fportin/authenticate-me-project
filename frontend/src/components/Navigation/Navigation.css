@@ -1,8 +1,8 @@
 .navbar__container {
     box-sizing: border-box;
     display: flex;
-    /* flex-direction: row-reverse; */
     justify-content: space-between;
+    align-items: center;
     height: 100px;
     position: fixed;
     width: 100%;
@@ -13,54 +13,26 @@
 
 .navbar-spots {
     background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    padding-right: 15px;
 }
 
 .navbar__container > ul {
     box-sizing: border-box;
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: flex-end;
+    align-items: center;
     width: 70%;
-    margin-top: 10px;
     color: white;
     font-size: 20px;
     font-family: 'Encode Sans Condensed', sans-serif;
-    /* border: 1px solid white; */
 }
 
-/* .navbar-home {
+.navbar-home {
     color: white;
     text-decoration: none;
-    padding-right: 10%;
-} */
-
-.navbar-post {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    margin-right: 20px;
-    /* border: 1px solid white; */
-}
-
-.profile-dropdown {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 10%;
-    width: auto;
-    color: black;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: whitesmoke;
-    padding-bottom: 5px;
-}
-
-.dropdown {
-    /* border: 1px solid red; */
-    /* height: 500px; */
-    width: 250px;
-    margin-right: 1%;
-    margin-left: 1%;
+    font-size: 20px;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
     
 }
 
@@ -71,15 +43,152 @@
     font-weight: 900;
     color: white;
     align-self: center;
-    padding-left: 3%;
+    margin-left: 3%;
     cursor: pointer;
     text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    /* filter: contrast(100%); */
+    box-sizing: border-box;
+    display: flex;
+    width: 255px;
+}
+
+.session__container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 5%;
+    margin-left: 1.5%;
+    width: 250px;
 }
 
 .signup-button {
     text-decoration: none;
-    color: #EE4723;
-    margin-right: 25px;
-    margin-left: 15px;
+    color: white;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+}
+
+.login-button_container {
+    width: 70px;
+    margin-left: 20%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-post {
+    color: white;
+    text-decoration: none;
+    margin-left: 3%;
+    box-sizing: border-box;
+    display: flex;
+    height: auto;
+    align-items: center;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+}
+
+.dropdown {
+    /* border: 1px solid red; */
+    height: 100px;
+    width: auto;
+    /* margin-right: 5%; */
+    margin-left: 12.5%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid gainsboro;
+    border-radius: 50%;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    cursor: pointer;
+    position: relative;
+}
+
+.triangle-icon {
+    position: absolute;
+    height: 10px;
+    width: 16px;
+    top: 110%;
+    right: 25%;
+    cursor: default;
+}
+
+.profile-dropdown {
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    top: 140%;
+    right: 0;
+    gap: 1vw;
+    width: 17vw;
+    height: auto;
+    color: white;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    background-color: black;
+    list-style-type: none;
+    padding: 1.5vw;
+    /* padding-left: 3%; */
+    text-align: left;
+    cursor: default;
+    transform-origin: top;
+    animation: dropDownEffect ease-in-out .3s;
+    animation-iteration-count: 1;
+    animation-direction: forwards;
+}
+
+.navbar-home:hover,
+.navbar-post:hover,
+.signup-button:hover {
+    color: gray;
+}
+
+.profile-icon:hover {
+    filter: invert(100%);
+}
+
+.profile-icon:hover > img,
+.profile-icon:hover > ul {
+    filter: invert(100%);
+}
+
+.logout-btn {
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    transition: background-color 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: gray;
+}
+
+.logout-btn:active {
+    color: white;
+}
+
+@keyframes dropDownEffect {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
 }

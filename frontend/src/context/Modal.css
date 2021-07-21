@@ -26,7 +26,7 @@
     height: 600px;
     width: 900px;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: transparent;
     border: 1px hidden;
     border-width: 2px 4px;
     border-radius: 5px;

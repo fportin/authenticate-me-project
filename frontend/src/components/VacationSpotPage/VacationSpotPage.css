@@ -223,3 +223,12 @@ hr {
         left: 0%;
     }
 }
+
+@keyframes fadeInEffect {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

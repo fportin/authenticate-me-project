@@ -12,6 +12,8 @@ const GreetingPage = (props) => {
     const sessionUser = useSelector(state => state.session.user);
     const history = useHistory();
 
+    document.body.classList.add('body-spot-page');
+
     useEffect(() => { 
         if (sessionUser) {
             const timeout = setTimeout(() => {
@@ -21,9 +23,9 @@ const GreetingPage = (props) => {
         }
     }, [sessionUser, history])
     if (sessionUser) return (
-        <>
-        <h1 className='greeting-page'>Welcome back, {sessionUser.username}!</h1>
-        </>
+        <div className='greeting-page__container'>
+        <h1 className='greeting-page'>Hello, {sessionUser.username}!</h1>
+        </div>
     )
 
   

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 
 import * as sessionActions from '../../store/session';
+import profileIcon from "../../profile-icon.png"
+import navtriangle from "../../nav-triangle.png"
 import './Navigation.css';
 
 function ProfileButton({ user }) {
@@ -32,18 +34,18 @@ function ProfileButton({ user }) {
 
     return (
         <div className='dropdown'>
-            <button onClick={openMenu}>
-                <i className="fas fa-user-circle" />
-            </button>
+            <div style={{ backgroundImage: `url(${profileIcon})` }} onClick={openMenu} className="profile-icon">
             {showMenu && (
+                <>
+                <img className="triangle-icon" src={navtriangle} alt='dropdown arrow'/>
                 <ul className="profile-dropdown">
-                    <li>{user.username}</li>
-                    <li>{user.email}</li>
-                    <li>
-                        <button onClick={logout}>Log Out</button>
-                    </li>
+                    <li>User: {user.username}</li>
+                    <li>Email: {user.email}</li>
+                            <button onClick={logout} className="logout-btn">Log Out</button>
                 </ul>
+                </>
             )}
+            </div>
         </div>
     );
 }

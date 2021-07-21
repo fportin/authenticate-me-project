@@ -5,6 +5,12 @@
     border-color: #f9f9f9;
     border-style: hidden;
     border-radius: 45%;
+    text-shadow: 2px 3px 5px rgba(0,0,0,1);
+    cursor: pointer;
+}
+
+.login-button:hover {
+    color: gray;
 }
 
 .login-page__container {
@@ -22,7 +28,8 @@
     font-size: 30px;
     font-family: 'Encode Sans Condensed', sans-serif;
     box-sizing: border-box;
-    animation: fadeInEffect ease-in 1s;
+    transform-origin: right top;
+    animation: resizeEffect ease-in-out .3s;
     animation-iteration-count: 1;
     animation-direction: forwards;
 }
@@ -102,6 +109,7 @@
     box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
+    text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     width: 20vw;
     gap: 1.5%;
 }
@@ -165,13 +173,13 @@
     text-shadow: none;
 }
 
-@keyframes fadeInEffect {
+@keyframes resizeEffect {
     0% {
         opacity: 0;
-        /* filter: grayscale(1); */
+        transform: scale(0, 0);
     }
     100% {
         opacity: 1;
-        /* filter: grayscale(0); */
+        transform: scale(1, 1);
     }
 }

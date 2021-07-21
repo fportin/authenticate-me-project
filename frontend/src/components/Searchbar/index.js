@@ -17,34 +17,31 @@ function Searchbar() {
 
     useEffect(() => {
         if (searchActive) {
-            if (searchWord) {
-                dispatch(spotActions.getSpots(searchWord))
-                setSearchActive(false)
-            } 
-        } else if (!searchWord && location.pathname === '/search') {
-            localStorage.removeItem('currentSearchWord')
+            dispatch(spotActions.getSpots(searchWord))
             setSearchActive(false)
-            history.push("/")
-        }   
+            
+        }
+
         
     }, [searchActive, searchWord, dispatch])
     
     useEffect(() => {
         const data = localStorage.getItem('currentSearchWord');
-        if (data) {
+        
+        if (data && data !== searchWord) {
             setSearchWord(data)
             setSearchActive(true)
+        } else if (!data) {
+            setSearchWord("")
         }
-    }, [])
-    
-    // useEffect(() => {
-    // }, [searchWord]);
+    }, [allSpots])
+
     
     const activateSearch = () => {
         if (searchWord) {
             localStorage.setItem('currentSearchWord', searchWord)
-            if (location.pathname !== '/search') {
-                history.push(`/search`)
+            if (location.pathname !== '/') {
+                history.push(`/`)
             }
             setSearchActive(true)
         }
@@ -71,23 +68,20 @@ function Searchbar() {
     }
     
     let resetButtonActive;
-    if (location.pathname === '/' || location.pathname === '/search') {
+    if (location.pathname === '/') {
+        let searchBarCon = document.querySelector('.search-bar__container')
+        let searchBarBox = document.querySelector('.search-bar')
+        let searchBarButton = document.querySelector('.search-button')
+        
         resetButtonActive = (
             <button type='reset' onClick={handleReset} className='reset-button'>CLEAR</button>
         )
-    }
-    
-    let searchBarCon = document.querySelector('.search-bar__container')
-    let searchBarBox = document.querySelector('.search-bar')
-    let searchBarButton = document.querySelector('.search-button')
-    if (location.pathname === '/' || location.pathname === '/search') {
         searchBarCon?.classList.add('front-page')
         searchBarBox?.classList.add('search-bar__front-page')
         searchBarButton?.classList.add('search-button__front-page')
-    } else {
-        searchBarCon?.classList.remove('front-page')
-        searchBarBox?.classList.remove('search-bar__front-page')
-        searchBarButton?.classList.remove('search-button__front-page')
+        searchBarCon?.classList.remove('search-bar__container')
+        searchBarBox?.classList.remove('search-bar')
+        searchBarButton?.classList.remove('search-button')
     }
     
     return (

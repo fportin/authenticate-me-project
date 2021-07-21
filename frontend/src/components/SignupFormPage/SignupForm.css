@@ -1,54 +1,146 @@
 .signup-page__container {
-    /* background-image: url("https://wallpaperaccess.com/full/3111159.jpg"); */
-    height: 100vh;
+    height: calc(100vh - 167.5px);
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-    font-size: 30px;
-    box-sizing: border-box;
-    margin-top: 100px;
-    /* animation: switchEffect ease-in 10s; */
-    animation-iteration-count: infinite;
-    animation-direction: forwards;
-}
-
-.signup-page__form {
-    /* margin-bottom: 50%; */
-    display: flex;
-    /* border: 1px solid red; */
-    height: 300px;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    color: white;
+    text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    box-sizing: border-box;
+    margin-top: 100px;
 }
 
 .signup-page__title {
+    color: white;
+    /* text-shadow: none; */
+    font-size: 5.5vw;
+    padding-top: 1%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.signup-page__form-container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-family: 'Yesteryear', cursive;
     color: black;
     text-shadow: none;
-    font-size: 150px;
+    font-size: 9vw;
+    /* border: 1px solid red; */
+    padding: 1%;
+    margin-top: 2%;
+    position: relative;
+}
+
+.signup-page-form-errors {
+    position: absolute;
+    color: red;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    top: 0;
+    margin-top: 0;
+    left: 25%;
+    font-size: 1.75vw;
+    width: auto;
+    z-index: 100;
 }
 
 .signup-page__find {
+    margin: 1%;
     animation: darkenEffect ease-in 3s;
     animation-iteration-count: 1;
     animation-direction: forwards;
 }
 
 .signup-page__your {
+    margin: 1%;
     animation: darkenEffect ease-in 4s;
     animation-iteration-count: 1;
     animation-direction: forwards;
 }
 
 .signup-page__escape {
-    animation: darkenEffect ease-in 4.5s;
+    margin: 1%;
+    animation: darkenEffect ease-in 4.25s;
     animation-iteration-count: 1;
     animation-direction: forwards;
 }
+
+.signup-page__form {
+    /* margin-bottom: 50%; */
+    display: flex;
+    font-size: 2.5vw;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    margin-right: 2%;
+    justify-content: space-around;
+}
+
+.signup-page__form-label {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 2.5%;
+}
+
+.signup-page__form-box {
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid gray;
+    height: 60%;
+    width: 50%;
+    font-size: 1.5vw;
+    padding: 5px 16px 1px 10px;
+}
+
+.signup-page__form-box:hover,
+.signup-page__form-box:focus {
+    border: 2px solid black;
+}
+
+.signup-btn-container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.signup-btn {
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 2vw;
+    padding: 1.5% 8%;
+    margin-left: 7.5%;
+    cursor: pointer;
+}
+
+.signup-btn:hover {
+    background-color: gray;
+}
+
+.signup-btn:active {
+    color: black;
+}
+
 
 @keyframes darkenEffect {
     0% {

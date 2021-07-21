@@ -24,22 +24,24 @@ function Navigation({ isLoaded }) {
     let sessionLinks;
     if (sessionUser) {
         sessionLinks = (
-            <>
-            <NavLink className='navbar-post' exact to="/create-spot">Post A Vacation Spot</NavLink>
-            <ProfileButton user={sessionUser} />
-            </>
+            <div className='session__container'>
+                <NavLink className='navbar-post' exact to="/create-spot">Post A Vacation Spot</NavLink>
+                <ProfileButton user={sessionUser} />
+            </div>
         );
     } else {
         sessionLinks = (
-            <>
+            <div className='session__container'>
                 <NavLink className='signup-button' exact to="/signup">Sign Up</NavLink>
-                <LoginFormModal />
-            </>
+                <div className='login-button_container'>
+                    <LoginFormModal />
+                </div>
+            </div>
         );
     }
 
     let searchBarActive;
-    if (location.pathname !== '/' && location.pathname !== '/search') {
+    if (location.pathname !== '/' && location.pathname !== '/signup') {
         searchBarActive = (
             <>
             <Searchbar /> 
@@ -50,17 +52,18 @@ function Navigation({ isLoaded }) {
     const navBar = document.querySelector('.navbar__container')
     if (location.pathname.match(/\/spots\/\d+/) || location.pathname.match("/create-spot")) {
         navBar?.classList.add('navbar-spots')
+        navBar?.classList.remove('navbar-container')
     } else {
         navBar?.classList.remove('navbar-spots')
     }
 
     return (
         <div className='navbar__container'>
-            <h1 className='logo' onClick={handleClick}>FunFinder🔎</h1>
+            <div className='logo' onClick={handleClick}>FunFinder🔎</div>
+            <NavLink className='navbar-home' exact to="/" onClick={handleClick}>Home</NavLink>
             <ul>
             
                 { searchBarActive }
-                {/* <NavLink className='navbar-home' exact to="/" onClick={handleClick}>Home</NavLink> */}
                 {isLoaded && sessionLinks}
 
             </ul>
