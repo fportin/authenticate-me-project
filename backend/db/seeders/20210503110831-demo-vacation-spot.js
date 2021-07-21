@@ -13,7 +13,7 @@ module.exports = {
         spotName: 'Hong Kong',
         activities: 'Gastro-Tourism, Shopping, etc...',
         location: 'Hong Kong',
-        pictureURL: 'https://www.fodors.com/assets/destinations/54468/boat-harbor-hong-kong-china-1_980x650.jpg',
+        pictureURL: 'https://wallpaperaccess.com/full/155822.jpg',
         userId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -22,7 +22,7 @@ module.exports = {
         spotName: 'Borobudur Temple',
         activities: 'Sight-seeing etc...',
         location: 'Borobudur Temple, Indonesia',
-        pictureURL: 'https://www.planetware.com/photos-large/PER/indonesia-borobudur-world-heritage.jpg',
+        pictureURL: 'https://wallpapercave.com/wp/wp4190856.jpg',
         userId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -112,7 +112,7 @@ module.exports = {
         spotName: 'Maya Bay',
         activities: 'Beach, Sight-seeing, etc...',
         location: 'Maya Bay, Thailand',
-        pictureURL: 'https://thethaiger.com/wp-content/uploads/2020/02/Screen-Shot-2020-02-17-at-13.49.42.png',
+        pictureURL: 'https://wallpapercave.com/wp/wp3547846.jpg',
         userId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -130,7 +130,7 @@ module.exports = {
         spotName: 'Paris',
         activities: 'Gastro-Tourism, Sight-seeing, Shopping etc...',
         location: 'Paris, France',
-        pictureURL: 'https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg',
+        pictureURL: 'https://cdn.wallpapersafari.com/46/25/7NzZvJ.jpg',
         userId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -148,7 +148,7 @@ module.exports = {
         spotName: 'Taj Mahal',
         activities: 'Sight-seeing, etc...',
         location: 'Taj Mahal, India',
-        pictureURL: 'https://www.planetware.com/wpimages/2020/01/india-in-pictures-beautiful-places-to-photograph-taj-mahal.jpg',
+        pictureURL: 'https://wallpaperaccess.com/full/5769.jpg',
         userId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -157,7 +157,7 @@ module.exports = {
         spotName: 'London',
         activities: 'Sight-seeing, Shopping, etc...',
         location: 'London, England',
-        pictureURL: 'https://i.imgur.com/sasYjHE.gif',
+        pictureURL: 'https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80',
         userId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -204,6 +204,24 @@ module.exports = {
         location: 'Coron, Palawan, Philippines',
         pictureURL: 'https://media.cntraveler.com/photos/5668630dc3c9e01555a4d421/master/pass/palawan-philippines-coron-cr-alamy.jpg',
         userId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        spotName: 'San Francisco',
+        activities: 'Shopping, Gastro-Tourism, Festivals, Sight-seeing, etc...',
+        location: 'San Francisco, California, USA',
+        pictureURL: 'https://wallpaperaccess.com/full/257754.jpg',
+        userId: 2,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        spotName: 'Seattle',
+        activities: 'Shopping, Gastro-Tourism, Festivals, Sight-seeing, etc...',
+        location: 'Seattle, Washington, USA',
+        pictureURL: 'https://wallpaperaccess.com/full/1850967.jpg',
+        userId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },

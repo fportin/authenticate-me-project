@@ -10,24 +10,64 @@ module.exports = {
 
       Example:
       */
-   return queryInterface.bulkInsert('Users', [
-     {
-       username: 'Light',
-       email: 'light@note.com',
-       hashedPassword: bcrypt.hashSync('MaliMali1133')
-     },
-     {
-       username: 'L',
-       email: faker.internet.email(),
-       hashedPassword: bcrypt.hashSync(faker.internet.password())
-     },
-     {
-       username: 'Frank',
-       email: faker.internet.email(),
-       hashedPassword: bcrypt.hashSync(faker.internet.password())
-     },
-   ], {});
-  },
+    return queryInterface.bulkInsert('Users', [
+      {
+        username: 'Light',
+        email: 'light@note.com',
+        hashedPassword: bcrypt.hashSync('MaliMali1133')
+      },
+      {
+        username: 'Lawliet',
+        email: faker.internet.email(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password())
+      },
+      {
+        username: 'Frank',
+        email: faker.internet.email(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password())
+      },
+      {
+        username: faker.name.firstName(),
+        email: faker.internet.email(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password())
+      },
+      {
+        username: faker.name.firstName(),
+        email: faker.internet.email(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password())
+      },
+      {
+        username: faker.name.firstName(),
+        email: faker.internet.email(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password())
+      },
+      {
+        username: faker.name.firstName(),
+        email: faker.internet.email(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password())
+      },
+      {
+        username: faker.name.firstName(),
+        email: faker.internet.email(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password())
+      },
+      {
+        username: faker.name.firstName(),
+        email: faker.internet.email(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password())
+      },
+      {
+        username: faker.name.firstName(),
+        email: faker.internet.email(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password())
+      },
+      {
+        username: faker.name.firstName(),
+        email: faker.internet.email(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password())
+      },
+    ], {});
+    },
 
   down: (queryInterface, Sequelize) => {
     /*
@@ -38,8 +78,6 @@ module.exports = {
       */
   
     const Op = Sequelize.Op;
-    return queryInterface.bulkDelete('Users', {
-      username: { [Op.in]: ['Light', 'L', 'Frank']}
-    }, {});
+    return queryInterface.bulkDelete('Users', null, {});
   }
 };

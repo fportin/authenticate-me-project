@@ -163,6 +163,20 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        location: 'San Francisco, California, USA',
+        coordinates: [37.7790262, -122.419906],
+        spotId: 23,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        location: 'Seattle, Washington, USA',
+        coordinates: [47.6038321, -122.3300624],
+        spotId: 24,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 
