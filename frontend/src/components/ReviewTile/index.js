@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, Redirect } from "react-router-dom";
 
 import * as reviewActions from "../../store/reviews";
 import ReviewForm from '../ReviewForm'
@@ -8,7 +7,6 @@ import './ReviewTile.css';
 
 function ReviewTile() {
     const dispatch = useDispatch();
-    const history = useHistory();
     const currentSpot = useSelector((state) => state.places.spot);
     const sessionUser = useSelector((state) => state.session.user);
     const allReviews = useSelector((state) => state.reviews.allReviews);
@@ -76,7 +74,6 @@ function ReviewTile() {
     
     
     if (currentSpot && allReviews) {
-        console.log('reviews length', allReviews.length)
         
         return (
             <div className='review-tile__container'>

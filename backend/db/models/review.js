@@ -21,7 +21,6 @@ module.exports = (sequelize, DataTypes) => {
     Review.belongsTo(models.VacationSpot, { foreignKey: 'spotId' })
   };
   Review.createReview = async function ({ reviewBody, userId, spotId }) {
-    console.log('models value', reviewBody)
     const body = reviewBody
     const review = await Review.create({
       body, 

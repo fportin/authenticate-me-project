@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './GreetingPage.css'
-import * as sessionActions from '../../store/session';
-import ReviewForm from '../ReviewForm';
 
 
 const GreetingPage = (props) => {
-    // const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const history = useHistory();
 

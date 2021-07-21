@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import * as spotActions from "../../store/vacation-spots";
 import ReviewTile from "../ReviewTile";
@@ -14,7 +14,6 @@ function VacationSpotPage() {
     const { spotId } = useParams();
     const currentSpot = useSelector((state) => state.places.spot);
     const sessionUser = useSelector((state) => state.session.user);
-    const history = useHistory();
     const [container2, setContainer2] = useState(false);
     const [editContainer, setEditContainer] = useState(false);
 

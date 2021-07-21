@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import * as spotActions from "../../store/vacation-spots";
 import './SpotTile.css';
@@ -9,9 +9,6 @@ function SpotTile() {
     const dispatch = useDispatch();
     const history = useHistory();
     const allSpots = useSelector((state) => state.places.allSpots);
-    const sessionUser = useSelector((state) => state.session.user);
-    const allReviews = useSelector((state) => state.reviews.allReviews);
-    // const [errors, setErrors] = useState([]);
 
 
     useEffect(() => {

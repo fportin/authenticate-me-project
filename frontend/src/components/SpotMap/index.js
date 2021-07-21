@@ -14,7 +14,6 @@ const SpotMap = () => {
 
     useEffect(() => {
         dispatch(spotLocationActions.getSpotLocation(currentSpot.id))
-        console.log('I happened for SpotMap index.js')
     }, [dispatch, currentSpot])
     
     if (currentSpot && currentLocation) {
