@@ -14,8 +14,7 @@
 
 .signup-page__title {
     color: white;
-    /* text-shadow: none; */
-    font-size: 5.5vw;
+    font-size: 3.5vw;
     padding-top: 1%;
     box-sizing: border-box;
     display: flex;
@@ -33,8 +32,7 @@
     color: black;
     text-shadow: none;
     font-size: 9vw;
-    /* border: 1px solid red; */
-    padding: 1%;
+    padding: 2%;
     margin-top: 2%;
     position: relative;
 }
@@ -50,8 +48,8 @@
     justify-content: center;
     top: 0;
     margin-top: 0;
-    left: 25%;
-    font-size: 1.75vw;
+    right: 5%;
+    font-size: 1.25vw;
     width: auto;
     z-index: 100;
 }
@@ -78,11 +76,10 @@
 }
 
 .signup-page__form {
-    /* margin-bottom: 50%; */
     display: flex;
-    font-size: 2.5vw;
+    font-size: 1.5vw;
     font-family: 'Encode Sans Condensed', sans-serif;
-    height: 100%;
+    height: 75%;
     width: 100%;
     flex-direction: column;
     margin-right: 2%;
@@ -101,16 +98,16 @@
 .signup-page__form-box {
     outline: none;
     border-radius: 5px;
-    border: 1px solid gray;
-    height: 60%;
+    border: 1px solid gainsboro;
+    height: 40%;
     width: 50%;
-    font-size: 1.5vw;
+    font-size: 1.25vw;
     padding: 5px 16px 1px 10px;
 }
 
 .signup-page__form-box:hover,
 .signup-page__form-box:focus {
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 .signup-btn-container {
@@ -127,7 +124,7 @@
     border-radius: 5px;
     background-color: black;
     color: white;
-    font-size: 2vw;
+    font-size: 1.25vw;
     padding: 1.5% 8%;
     margin-left: 7.5%;
     cursor: pointer;

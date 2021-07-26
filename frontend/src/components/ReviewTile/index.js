@@ -84,7 +84,7 @@ function ReviewTile() {
                         return (
                             <div key={review.id} className='review-box'>
                                 <div className='review-box-top'>
-                                    <div class='review-box-user'>{review.User.username}</div>
+                                    <div className='review-box-user'>{review.User.username}</div>
                                     {sessionUser?.id === review.userId ? <button type='submit' onClick={handleClick(review)} className='edit-review-btn'>Edit</button> : null}
                                 </div>
                                 <div className='review-box-body'>{review.body}</div>

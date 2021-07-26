@@ -38,7 +38,7 @@
 
 .logo{
     position: relative;
-    font-size: 50px;
+    font-size: 35px;
     font-family: 'Yesteryear', cursive;
     font-weight: 900;
     color: white;
@@ -48,8 +48,8 @@
     text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     box-sizing: border-box;
     display: flex;
-    width: 255px;
-    height: 75px;
+    width: 180px;
+    height: 50px;
 }
 
 .session__container {
