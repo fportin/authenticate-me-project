@@ -42,13 +42,14 @@
     font-family: 'Yesteryear', cursive;
     font-weight: 900;
     color: white;
-    align-self: center;
     margin-left: 3%;
     cursor: pointer;
     text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     box-sizing: border-box;
     display: flex;
-    width: 180px;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
     height: 50px;
 }
 
@@ -91,10 +92,8 @@
 }
 
 .dropdown {
-    /* border: 1px solid red; */
     height: 100px;
     width: auto;
-    /* margin-right: 5%; */
     margin-left: 12.5%;
     box-sizing: border-box;
     display: flex;
@@ -141,7 +140,6 @@
     background-color: black;
     list-style-type: none;
     padding: 1.5vw;
-    /* padding-left: 3%; */
     text-align: left;
     cursor: default;
     transform-origin: top;
