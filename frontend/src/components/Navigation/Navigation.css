@@ -49,6 +49,7 @@
     box-sizing: border-box;
     display: flex;
     width: 255px;
+    height: 75px;
 }
 
 .session__container {
