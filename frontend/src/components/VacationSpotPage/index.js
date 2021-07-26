@@ -18,6 +18,7 @@ function VacationSpotPage() {
     const [editContainer, setEditContainer] = useState(false);
 
     document.body.classList.add('body-spot-page');
+    document.documentElement.classList.add('body-spot-page');
 
     const showContainer1 = (e) => {
         e.preventDefault()

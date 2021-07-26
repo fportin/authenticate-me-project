@@ -10,6 +10,7 @@ function FrontPage() {
     const dispatch = useDispatch();
 
     document.body.classList.remove('body-spot-page');
+    document.documentElement.classList.remove('body-spot-page');
 
     useEffect(() => {
         dispatch(spotActions.getSpots())
