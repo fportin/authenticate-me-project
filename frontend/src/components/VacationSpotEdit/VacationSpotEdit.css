@@ -8,6 +8,7 @@
     box-sizing: border-box;
     flex-direction: column;
     align-items: center;
+    overflow: auto;
     /* justify-content: flex-start; */
     /* border: 1px solid green; */
 }

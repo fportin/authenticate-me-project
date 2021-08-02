@@ -10,6 +10,7 @@
     text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     box-sizing: border-box;
     margin-top: 100px;
+    overflow: auto;
 }
 
 .signup-page__title {
