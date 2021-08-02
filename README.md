@@ -12,48 +12,48 @@ Whether you are looking for a travel destination with your friends and family, o
 
 
 # Technologies:
-* Python
-* Flask
-* Flask-SQLAlchemy
-* WTForms
-* Flask-Migrate
 * JavaScript
 * React
 * Redux
-* SQLAlchemy
-* Docker
-* Inkscape
+* React-Leaflet.js
+* Leaflet-Geosearch
+* Express
+* Sequelize
 * PostgreSQL
 * CSS
-* AWS
+* HTML
 * Heroku
 
 
 # Key-Features:
 
-# Shopping/Cart:
-* The Shopping Cart lives only in the Local Storage and dynamically retrieves product information from the database.
-* Users could add, edit, delete products in their shopping cart.
-* Users could only view their own shopping cart.
-* Users could checkout the products in their shopping cart.
+# Vacation-Spots:
+* Vacation Spot pages are interactive, well-styled, and very responsive.
+* Vacation Spot information that are edited/submitted are immediately read and posted.
+* Logged-in Users could create a Vacation Spot listing/page.
+* Authorized user/owner of a Vacation Spot listing/page can edit or delete the page.
+* Any user can view a Vacation spot page.
+
+# Maps:
+* Accurate and dynamic Mapping feature for every Vacation Spot.
+* Very user-friendly feature, a thunk retrieves the geolocation of an address so that a user would no longer worry about a location's coordinates.
 
 # Reviews:
-* Star rating is implemented along with the Product Review text.
-* Submitted Reviews are used to effectively compute a Product's Rating.
-* Logged-in user can review a Product listing.
-* Logged-in user can delete or edit his review.
+* Logged-in Users can review a Vacation Spot listing.
+* Logged-in User can delete or edit his/her review.
+* Any user can view Vacation Spot reviews.
 
 # Search: 
 * Accurate search queries and filtered well.
 
 
-# Modern Being live site:
-* https://modernbeing.herokuapp.com/
+# FunFinder live site:
+* https://funfinder.herokuapp.com/
 
 # Developer:
 * Franco Portin (solo)
 
 # Future Plans:
-* Implementing Recommendations feature.
-* Will track purchase history to create algorithm which items are bought together.
+* Implementing a Recommended feature along with Reviews.
+* Suggest to users which Vacation Spot listing is highly Recommended.
 * Create algorithm what the user is interested in.
