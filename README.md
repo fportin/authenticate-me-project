@@ -55,5 +55,5 @@ Whether you are looking for a travel destination with your friends and family, o
 
 # Future Plans:
 * Implementing a Recommended feature along with Reviews.
-* Suggest to users which Vacation Spot listing is highly Recommended.
-* Create algorithm what the user is interested in.
+* Suggest to users which Vacation Spot listings are highly Recommended.
+* Create an algorithm to suggest what the user might be interested in.
